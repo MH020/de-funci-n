@@ -1,6 +1,26 @@
-import { start } from "repl";
 
-export function textBox(titleText,textinput){
+function navbar(){
+    const navbar = document.createElement("nav")
+    navbar.classList.add("navbar")
+
+    const links =  [
+        {text: "home", href: "/"},
+        {text: "lesson1", href: "/"},
+        {text: "lesson2", href: "/"},
+
+    ];
+
+    links.forEach(link => {
+        const anchorTag = document.createElement("a")
+        anchorTag.textContent = link.text; 
+        anchorTag.href = link.href; 
+        navbar.appendChild(anchorTag);
+    })
+
+    return navbar;
+}
+
+function textBox(titleText,textinput){
     const textBoxContainer = document.createElement("div"); 
     textBoxContainer.classList.add("textBox"); 
 
@@ -34,7 +54,7 @@ function textSplitter(text){
     return textArray
 }
 
-export function codeRunner(titleText,inputCode,outputCode){
+function codeRunner(titleText,inputCode,outputCode){
 
     const inputTextArray = textSplitter(inputCode);
     const outputTextArray = textSplitter(outputCode);
@@ -82,4 +102,11 @@ export function codeRunner(titleText,inputCode,outputCode){
     });
 
     return codeContainer
+}
+
+export default {
+    navbar: navbar,
+    textBox: textBox,
+    codeRunner: codeRunner
+
 }
