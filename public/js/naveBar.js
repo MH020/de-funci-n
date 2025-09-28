@@ -20,3 +20,5 @@ export function navbar(){
     navbarContainer.appendChild(navbar);
 }
 navbar();
+
+
