@@ -20,9 +20,11 @@ function navbar(){
     return navbar;
 }
 
-function textBox(titleText,textinput){
+function textBox(titleText,textinput,id,idIdentifier){
     const textBoxContainer = document.createElement("div"); 
+    textBoxContainer.id = id
     textBoxContainer.classList.add("textBox"); 
+    textBoxContainer.dataset.idIdentifier = idIdentifier
 
     const title = document.createElement("h3");
     title.textContent = titleText || "title not given";
@@ -32,7 +34,6 @@ function textBox(titleText,textinput){
     text.classList.add("text");
     text.textContent = textinput  || "text not given";
     textBoxContainer.appendChild(text); 
-    
 
     return textBoxContainer; 
 }
@@ -104,9 +105,30 @@ function codeRunner(titleText,inputCode,outputCode){
     return codeContainer
 }
 
+function createSidebar(htmlElement){
+    const sidebarContainer = document.createElement("div"); 
+    sidebarContainer.classList.add("sidebarContainer")
+
+    const elementIDs = htmlElement.querySelectorAll("[id]");
+
+    elementIDs.forEach(element => {
+        const anchorTag = document.createElement("a")
+        anchorTag.textContent = element.dataset.idIdentifier
+        anchorTag.href = `#${element.id}`;
+
+        const anchorHolder = document.createElement("div");
+        anchorHolder.appendChild(anchorTag)
+        sidebarContainer.appendChild(anchorHolder)
+    }); 
+
+    return sidebarContainer
+
+}
+
 export default {
     navbar: navbar,
     textBox: textBox,
-    codeRunner: codeRunner
+    codeRunner: codeRunner,
+    createSidebar: createSidebar
 
 }
