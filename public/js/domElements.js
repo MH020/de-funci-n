@@ -5,14 +5,19 @@ function setupBasicPage(){
     navbarDiv.classList.add("navbar")
     const mainContainer = document.createElement("div");
     mainContainer.classList.add("mainContainer");
+
     const sideBarDiv = document.createElement("div");
     sideBarDiv.classList.add("SideBar");
+
+    const rightsideBarDiv = document.createElement("div");
+    rightsideBarDiv.classList.add("rightsideBarDiv");
 
     const pageDiv = document.createElement("div");
     pageDiv.classList.add("page");
 
     mainContainer.appendChild(sideBarDiv);
     mainContainer.appendChild(pageDiv)
+    mainContainer.appendChild(rightsideBarDiv);
 
     document.body.appendChild(navbarDiv);
     document.body.appendChild(mainContainer);
@@ -47,18 +52,31 @@ function navbar(){
     return navbar;
 }
 
-function textBox(titleText,textinput,id,idIdentifier){
-    const textBoxContainer = document.createElement("div"); 
-    textBoxContainer.id = id
-    textBoxContainer.classList.add("textBox"); 
-    textBoxContainer.dataset.idIdentifier = idIdentifier
+function createSection(title,id,idIdentifier){
+    const newSection = document.createElement("div");
+    newSection.id = id;
+    newSection.dataset.idIdentifier = idIdentifier
 
-    const title = document.createElement("h3");
+    const sectionTitle = document.createElement("h2");
+    sectionTitle.textContent = title; 
+    sectionTitle.classList.add("SectionTitle")
+
+    newSection.appendChild(sectionTitle);
+    
+    return newSection; 
+}
+
+function textBox(titleText,textinput){
+    const textBoxContainer = document.createElement("div"); 
+    textBoxContainer.classList.add("textbox"); 
+
+    const title = document.createElement("h3")
+    title.classList.add("textboxTitle")
     title.textContent = titleText || "title not given";
     textBoxContainer.appendChild(title); 
 
     const text = document.createElement("p");
-    text.classList.add("text");
+    text.classList.add("Textboxtext");
     text.textContent = textinput  || "text not given";
     textBoxContainer.appendChild(text); 
 
@@ -92,6 +110,7 @@ function codeRunner(titleText,inputCode,outputCode){
 
     const title = document.createElement("h3");
     title.textContent = titleText || "title not given";
+    title.classList.add("codeRunnerTitle")
     codeContainer.appendChild(title); 
 
 
@@ -154,10 +173,15 @@ function createSidebar(htmlElement){
 
 }
 
+function createAddsForRightSideBar(){
+    const rightSidebar = document.querySelector('.rightsideBarDiv');
+}
+
 export default {
     setupBasicPage: setupBasicPage,
     setupLogo: setupLogo,
     navbar: navbar,
+    createSection: createSection,
     textBox: textBox,
     codeRunner: codeRunner,
     createSidebar: createSidebar,

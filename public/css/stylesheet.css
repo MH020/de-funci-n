@@ -1,36 +1,66 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5vh;
   display: flex;
-  gap: 1rem;
-  background: #c1121f;
-  padding: 1rem;
-}
-
-.mainContainer {
-  display: flex;
-  min-height: calc(100vh - 60px); 
-  background: #fffdf5; 
-}
-
-.sidebarContainer {
-  width: 200px;
-  font-family: 'Montserrat', sans-serif; 
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: #fff;
   align-items: center;
-  padding: 0 20px;
-}
-
-.page {
-  flex: 1;
-  background-color: #fff;
-  padding: 20px;
-  font-family: 'Montserrat', sans-serif;
+  padding: 0 2rem;
+  background: #c1121f;
+  gap: 1rem;
+  z-index: 1000;
 }
 
 .navbar a {
   color: #fffdf5;
+  font-weight: bold;
   text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #fca311;
+  text-decoration: underline;
+}
+
+
+.mainContainer {
+  display: flex;
+  min-height: 100vh;
+}
+
+.SideBar {
+  position: fixed;
+  top: 5vh;
+  left: 0;
+  width: 15vw;  /* you can also use vw for responsive width */
+  bottom: 0;
+  background-color: #eee;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+
+.rightsideBarDiv {
+  top: 5vh;
+  width: 15vw;
+  background-color: #ddd;
+  padding: 1rem;
+}
+
+
+.page {
+  margin-top: 5vh;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  padding: 20px;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.navbar a {
+  color: #fffdf5;
   font-weight: bold;
 }
 
@@ -38,3 +68,81 @@
   text-decoration: underline;
   color: #fca311; 
 }
+
+.textbox {
+  border: 2px solid #c1121f;   
+  border-radius: 8px;
+  background: #fffdf5;         
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.textboxTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #c1121f;              
+  margin-bottom: 0.5rem;
+}
+
+.Textboxtext {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;                 
+}
+.codeContainer {
+  border: 2px solid #c1121f;     
+  border-radius: 8px;
+  background: #fffdf5;           
+  margin: 1rem 0;
+  padding: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.codeRunnerTitle {
+  font-size: 1.2rem;
+  font-weight: bold; 
+  color: #c1121f;                
+  margin-bottom: 0.75rem;
+}
+
+.inputContainer, .outputContainer {         
+  max-width: 50%;                
+  background: #1a1a1a;           
+  color: #f5f5f5;                
+  font-family: 'Source Code Pro', monospace; 
+  font-size: 0.9rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  overflow-x: auto;              
+}
+
+.inputContainer p, .outputContainer p {
+  margin: 0;                     
+  white-space: pre-wrap;        
+}
+
+.inputContainer {
+  margin-top: 1rem;              
+}
+
+.button {
+  background: #c1121f;
+  color: #fffdf5;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: #a50e19;           
+}
+
+
+
