@@ -52,7 +52,7 @@
 
 
 .page {
-  margin-top: 10vh;
+  margin-top: 5vh;
   margin-left: 20vw;
   padding: 20px;
   flex: 1; 
@@ -71,11 +71,9 @@
   color: #fca311; 
 }
 
-.rightsideBarDiv img.meme {
+.meme {
   padding-top: 2rem;
-  width: 100%;           
-  height: auto;         
-  display: block;        
+  width: 100%;                  
   margin-bottom: 10px;   
   border-radius: 4px;    
 }

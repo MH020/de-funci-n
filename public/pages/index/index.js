@@ -31,6 +31,10 @@ githubLink.textContent = "https://github.com/MH020"
 githubLink.href = "https://github.com/MH020"
 githubTextbox.appendChild(githubLink)
 
+const memes = await dom.getAddsForRightSideBar();
+
+dom.populateRightSideBar(memes);
+
 sidebar.appendChild(dom.createSidebar(page));
 
 
