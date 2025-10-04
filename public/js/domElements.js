@@ -173,7 +173,7 @@ function createSidebar(htmlElement){
 
 }
 
-function createAddsForRightSideBar(){
+async function getAddsForRightSideBar(){
     const rightSidebar = document.querySelector('.rightsideBarDiv');
     const sideBarHight = rightSidebar.clientHeight; 
 
@@ -182,16 +182,26 @@ function createAddsForRightSideBar(){
     const totalAds = Math.floor(sideBarHight / adHight) 
     console.log(totalAds)
 
-    fetch("/getAds", {
+    const response = await fetch("/getAds", {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({totalAds: totalAds})
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
+
+    const data = await response.json()
+    return data.memes || [data]; 
+}
+
+function populateRightSideBar(memes){
+    const rightSidebar = document.querySelector('.rightsideBarDiv');
+
+    memes.forEach(meme =>{
+        const memeContainer = document.createElement("img");
+        memeContainer.classList.add("meme")
+        memeContainer.src = meme.url; 
+        memeContainer.alt = "a very funny meme"
+        rightSidebar.appendChild(memeContainer);
     })
-    
 }
 
 export default {
@@ -202,5 +212,6 @@ export default {
     textBox: textBox,
     codeRunner: codeRunner,
     createSidebar: createSidebar,
-    createAddsForRightSideBar: createAddsForRightSideBar,
+    getAddsForRightSideBar: getAddsForRightSideBar,
+    populateRightSideBar: populateRightSideBar,
 }
