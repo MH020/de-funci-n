@@ -28,6 +28,8 @@ page.appendChild(basicFunctionExample)
 
 page.appendChild(dom.textBox("Funciónes con Parámetros","Las funciones también pueden tener parámetros como este"))
 
+dom.createAddsForRightSideBar();
+
 sidebar.appendChild(dom.createSidebar(page));
 
 

@@ -175,6 +175,23 @@ function createSidebar(htmlElement){
 
 function createAddsForRightSideBar(){
     const rightSidebar = document.querySelector('.rightsideBarDiv');
+    const sideBarHight = rightSidebar.clientHeight; 
+
+    const adHight = 100; 
+
+    const totalAds = Math.floor(sideBarHight / adHight) 
+    console.log(totalAds)
+
+    fetch("/getAds", {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({totalAds: totalAds})
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+    })
+    
 }
 
 export default {
@@ -185,4 +202,5 @@ export default {
     textBox: textBox,
     codeRunner: codeRunner,
     createSidebar: createSidebar,
+    createAddsForRightSideBar: createAddsForRightSideBar,
 }
