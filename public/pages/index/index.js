@@ -1,9 +1,11 @@
-import dom from './domElements.js'
+import dom from '../../js/domElements.js'
 
+dom.setupBasicPage();
+dom.setupLogo("../../css/javascript-736401_1280.png")
 
-const navbar = document.getElementById("navbar");
-const page = document.getElementById("page");
-const sidebar = document.getElementById("SideBar");
+const navbar = document.querySelector(".navbar");
+const page = document.querySelector(".page");
+const sidebar = document.querySelector(".SideBar");
 
 
 const welcomeTitle = document.createElement("h1")

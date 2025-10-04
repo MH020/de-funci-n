@@ -1,4 +1,31 @@
 
+function setupBasicPage(){
+
+    const navbarDiv = document.createElement("div");
+    navbarDiv.classList.add("navbar")
+    const mainContainer = document.createElement("div");
+    mainContainer.classList.add("mainContainer");
+    const sideBarDiv = document.createElement("div");
+    sideBarDiv.classList.add("SideBar");
+
+    const pageDiv = document.createElement("div");
+    pageDiv.classList.add("page");
+
+    mainContainer.appendChild(sideBarDiv);
+    mainContainer.appendChild(pageDiv)
+
+    document.body.appendChild(navbarDiv);
+    document.body.appendChild(mainContainer);
+}
+
+function setupLogo(href){
+    const favicon = document.createElement("link");
+    favicon.rel = "icon";
+    favicon.href = href;
+
+    document.head.appendChild(favicon);
+}
+
 function navbar(){
     const navbar = document.createElement("nav")
     navbar.classList.add("navbar")
@@ -126,9 +153,10 @@ function createSidebar(htmlElement){
 }
 
 export default {
+    setupBasicPage: setupBasicPage,
+    setupLogo: setupLogo,
     navbar: navbar,
     textBox: textBox,
     codeRunner: codeRunner,
-    createSidebar: createSidebar
-
+    createSidebar: createSidebar,
 }
