@@ -32,7 +32,7 @@ function navbar(){
 
     const links =  [
         {text: "home", href: "/"},
-        {text: "lesson1", href: "/"},
+        {text: "Lo básico", href: "/basics"},
         {text: "lesson2", href: "/"},
 
     ];
@@ -71,8 +71,8 @@ function textSplitter(text){
     let start = 0; 
     
     for (let i =0; i < text.length; i++){
-        if(text[i] == "/n"){
-            textArray.push(text.slice(start, i + 1));
+        if(text[i] === "\n"){
+            textArray.push(text.slice(start, i));
             start = i + 1; 
         }
     }
@@ -96,15 +96,17 @@ function codeRunner(titleText,inputCode,outputCode){
 
 
     const inputContainer = document.createElement("div");
+    inputContainer.classList.add("inputContainer");
     codeContainer.appendChild(inputContainer);
 
     inputTextArray.forEach(element => {
-        const inputputCodeText = document.createElement("p");
-        inputputCodeText.textContent = element || "no output code"; 
-        inputContainer.appendChild(inputputCodeText);
+        const inputCodeText = document.createElement("p");
+        inputCodeText.textContent = element || "no output code"; 
+        inputContainer.appendChild(inputCodeText);
     });
 
     const outputContainer = document.createElement("div");
+    outputContainer.classList.add("inputContainer");
 
     outputTextArray.forEach(element => {
         const outputCodeText = document.createElement("p");

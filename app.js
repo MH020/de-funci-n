@@ -9,6 +9,10 @@ app.get("/",(req,res) => {
 res.sendFile(path.resolve("public/pages/index/index.html"));
 })
 
+app.get("/basics",(req,res) => {
+res.sendFile(path.resolve("public/pages/basics/basics.html"));
+})
+
 const PORT = 8080; 
 app.listen(PORT, () => {
     console.log("app startet on port", PORT)
