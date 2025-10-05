@@ -87,7 +87,15 @@ page.appendChild(dom.codeRunner(".forEach en bucle",
 
 page.appendChild(dom.textBox(".forEach Explicación","con forEach simplemente recorremos cada elemento y hacemos algo para cada elemento, sin embargo, no devolvemos una nueva lista después. Úsalo cuando no te importen los valores después")); //with forEach we just loop over each element and do something for each element, however we do not return a new list after. use it when you don't care about the values afterwards
 
-//need the rest of the loops later but is so boring 
+
+page.appendChild(dom.codeRunner(".filter en bucle",
+    "const numbers = [1, 2, 3, 4, 5];\nconst mayorQueTres = numbers.filter(number =>( number > 3);{\nconsole.log(mayorQueTres)\n})\n", 
+    "[4, 5]"
+));
+
+page.appendChild(dom.textBox(".filter Explicación",".filter llama al método de devolución de llamada en cada elemento de la lista y, si es verdadero, se incluye en la nueva lista que devuelve .filter." +
+    "También hay un método .find que devuelve el primer elemento que coincide con la condición"
+)); //.filter calls the callback method on each element of the list and if it true, then it is included in the new list that .filter returns
 
 const memes = await dom.getAddsForRightSideBar();
 
