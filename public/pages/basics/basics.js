@@ -64,21 +64,23 @@ page.appendChild(dom.createSection("función de devolución de llamada",lastAppe
 
 page.appendChild(dom.textBox("Una función de devolución de llamada","Una función de devolución de llamada o también llamada función de orden superior es una función que toma otra función como argumento")); //A callback function or also called a higher order function is a function that takes another function as an argument
 
-page.appendChild(dom.codeRunner("Aquí está la misma función de antes pero como una función de flecha",
+page.appendChild(dom.codeRunner("Aquí hay un ejemplo de cómo usar una función de devolución de llamada",
     "function ejecutanteDeAcciónGenérico(name, action) {\n return action(name)\n}\nfunction acciónDeCocción(name) {\nreturn `${name} disfruta cocinar.`\n}\nconsole.log(ejecutanteDeAcciónGenérico(Martin,acciónDeCocción))", 
     "martin disfruta cocinar."
 ));
 
+dom.createSection("Bucles",lastAppendedID++,"Bucles"); 
 
-function genericActionPerformer(name, action) {
-    return action(name) 
-}
+page.appendChild(dom.textBox("Bucles in javascript","Los bucles son algo que usamos muy a menudo en javascript, ahora repasaremos los tipos más comunes y cuándo se usan")); //Loops are something we use very often in javascript, we will now go over the most common types and when they are used 
 
-function acciónDeCocción(name) {
-    return `${name} disfruta cocinar.`
-}
+page.appendChild(dom.textBox("Bucles in javascript","Los bucles son algo que usamos muy a menudo en javascript, ahora repasaremos los tipos más comunes y cuándo se usan")); //Loops are something we use very often in javascript, we will now go over the most common types and when they are used 
 
-console.log("callback output",genericActionPerformer("martin",acciónDeCocción))
+
+page.appendChild(dom.codeRunner("Aquí hay un ejemplo de cómo usar una función de devolución de llamada",
+    "function ejecutanteDeAcciónGenérico(name, action) {\n return action(name)\n}\nfunction acciónDeCocción(name) {\nreturn `${name} disfruta cocinar.`\n}\nconsole.log(ejecutanteDeAcciónGenérico(Martin,acciónDeCocción))", 
+    "martin disfruta cocinar."
+));
+
 
 const memes = await dom.getAddsForRightSideBar();
 

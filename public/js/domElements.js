@@ -177,7 +177,7 @@ async function getAddsForRightSideBar(){
     const rightSidebar = document.querySelector('.rightsideBarDiv');
     const sideBarHight = rightSidebar.clientHeight; 
 
-    const adHight = 100; 
+    const adHight = 300; 
 
     const totalAds = Math.floor(sideBarHight / adHight) 
     console.log(totalAds)
