@@ -21,6 +21,12 @@ app.get('/basics', (req, res) => {
   res.sendFile(path.resolve('public/pages/basics/basics.html'))
 })
 
+app.get('/firstServer', (req, res) => {
+  res.sendFile(path.resolve('public/pages/serverBasics/serverBasics.html'))
+})
+
+
+
 
 const PORT = 8080
 app.listen(PORT, () => {
