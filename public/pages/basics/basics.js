@@ -87,6 +87,7 @@ page.appendChild(dom.codeRunner(".forEach en bucle",
 
 page.appendChild(dom.textBox(".forEach Explicación","con forEach simplemente recorremos cada elemento y hacemos algo para cada elemento, sin embargo, no devolvemos una nueva lista después. Úsalo cuando no te importen los valores después")); //with forEach we just loop over each element and do something for each element, however we do not return a new list after. use it when you don't care about the values afterwards
 
+//need the rest of the loops later but is so boring 
 
 const memes = await dom.getAddsForRightSideBar();
 
