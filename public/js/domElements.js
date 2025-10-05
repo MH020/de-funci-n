@@ -1,217 +1,211 @@
+function setupBasicPage () {
+  const navbarDiv = document.createElement('div')
+  navbarDiv.classList.add('navbar')
+  const mainContainer = document.createElement('div')
+  mainContainer.classList.add('mainContainer')
 
-function setupBasicPage(){
+  const sideBarDiv = document.createElement('div')
+  sideBarDiv.classList.add('SideBar')
 
-    const navbarDiv = document.createElement("div");
-    navbarDiv.classList.add("navbar")
-    const mainContainer = document.createElement("div");
-    mainContainer.classList.add("mainContainer");
+  const rightsideBarDiv = document.createElement('div')
+  rightsideBarDiv.classList.add('rightsideBarDiv')
 
-    const sideBarDiv = document.createElement("div");
-    sideBarDiv.classList.add("SideBar");
+  const pageDiv = document.createElement('div')
+  pageDiv.classList.add('page')
 
-    const rightsideBarDiv = document.createElement("div");
-    rightsideBarDiv.classList.add("rightsideBarDiv");
+  mainContainer.appendChild(sideBarDiv)
+  mainContainer.appendChild(pageDiv)
+  mainContainer.appendChild(rightsideBarDiv)
 
-    const pageDiv = document.createElement("div");
-    pageDiv.classList.add("page");
-
-    mainContainer.appendChild(sideBarDiv);
-    mainContainer.appendChild(pageDiv)
-    mainContainer.appendChild(rightsideBarDiv);
-
-    document.body.appendChild(navbarDiv);
-    document.body.appendChild(mainContainer);
+  document.body.appendChild(navbarDiv)
+  document.body.appendChild(mainContainer)
 }
 
-function setupLogo(href){
-    const favicon = document.createElement("link");
-    favicon.rel = "icon";
-    favicon.href = href;
+function setupLogo (href) {
+  const favicon = document.createElement('link')
+  favicon.rel = 'icon'
+  favicon.href = href
 
-    document.head.appendChild(favicon);
+  document.head.appendChild(favicon)
 }
 
-function navbar(){
-    const navbar = document.createElement("nav")
-    navbar.classList.add("navbar")
+function navbar () {
+  const navbar = document.createElement('nav')
+  navbar.classList.add('navbar')
 
-    const links =  [
-        {text: "home", href: "/"},
-        {text: "Lo básico", href: "/basics"},
-        {text: "lesson2", href: "/"},
+  const links = [
+    { text: 'home', href: '/' },
+    { text: 'Lo básico', href: '/basics' },
+    { text: 'lesson2', href: '/' }
 
-    ];
+  ]
 
-    links.forEach(link => {
-        const anchorTag = document.createElement("a")
-        anchorTag.textContent = link.text; 
-        anchorTag.href = link.href; 
-        navbar.appendChild(anchorTag);
-    })
+  links.forEach(link => {
+    const anchorTag = document.createElement('a')
+    anchorTag.textContent = link.text
+    anchorTag.href = link.href
+    navbar.appendChild(anchorTag)
+  })
 
-    return navbar;
+  return navbar
 }
 
-function createSection(title,id,idIdentifier){
-    const newSection = document.createElement("div");
-    newSection.id = id;
-    newSection.dataset.idIdentifier = idIdentifier
+function createSection (title, id, idIdentifier) {
+  const newSection = document.createElement('div')
+  newSection.id = id
+  newSection.dataset.idIdentifier = idIdentifier
 
-    const sectionTitle = document.createElement("h2");
-    sectionTitle.textContent = title; 
-    sectionTitle.classList.add("SectionTitle")
+  const sectionTitle = document.createElement('h2')
+  sectionTitle.textContent = title
+  sectionTitle.classList.add('SectionTitle')
 
-    newSection.appendChild(sectionTitle);
-    
-    return newSection; 
+  newSection.appendChild(sectionTitle)
+
+  return newSection
 }
 
-function textBox(titleText,textinput){
-    const textBoxContainer = document.createElement("div"); 
-    textBoxContainer.classList.add("textbox"); 
+function textBox (titleText, textinput) {
+  const textBoxContainer = document.createElement('div')
+  textBoxContainer.classList.add('textbox')
 
-    const title = document.createElement("h3")
-    title.classList.add("textboxTitle")
-    title.textContent = titleText || "title not given";
-    textBoxContainer.appendChild(title); 
+  const title = document.createElement('h3')
+  title.classList.add('textboxTitle')
+  title.textContent = titleText || 'title not given'
+  textBoxContainer.appendChild(title)
 
-    const text = document.createElement("p");
-    text.classList.add("Textboxtext");
-    text.textContent = textinput  || "text not given";
-    textBoxContainer.appendChild(text); 
+  const text = document.createElement('p')
+  text.classList.add('Textboxtext')
+  text.textContent = textinput || 'text not given'
+  textBoxContainer.appendChild(text)
 
-    return textBoxContainer; 
+  return textBoxContainer
 }
 
+function textSplitter (text) {
+  const textArray = []
+  let start = 0
 
-function textSplitter(text){
-    const textArray = []; 
-    let start = 0; 
-    
-    for (let i =0; i < text.length; i++){
-        if(text[i] === "\n"){
-            textArray.push(text.slice(start, i));
-            start = i + 1; 
-        }
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === '\n') {
+      textArray.push(text.slice(start, i))
+      start = i + 1
     }
-    if(start < text.length){
-        textArray.push(text.slice(start))
+  }
+  if (start < text.length) {
+    textArray.push(text.slice(start))
+  }
+  return textArray
+}
+
+function codeRunner (titleText, inputCode, outputCode) {
+  const inputTextArray = textSplitter(inputCode)
+  const outputTextArray = textSplitter(outputCode)
+
+  const codeContainer = document.createElement('div')
+  codeContainer.classList.add('codeContainer')
+
+  const title = document.createElement('h3')
+  title.textContent = titleText || 'title not given'
+  title.classList.add('codeRunnerTitle')
+  codeContainer.appendChild(title)
+
+  const inputContainer = document.createElement('div')
+  inputContainer.classList.add('inputContainer')
+  codeContainer.appendChild(inputContainer)
+
+  inputTextArray.forEach(element => {
+    const inputCodeText = document.createElement('p')
+    inputCodeText.textContent = element || 'no output code'
+    inputContainer.appendChild(inputCodeText)
+  })
+
+  const outputContainer = document.createElement('div')
+  outputContainer.classList.add('inputContainer')
+
+  outputTextArray.forEach(element => {
+    const outputCodeText = document.createElement('p')
+    outputCodeText.textContent = element || 'no output code'
+    outputContainer.appendChild(outputCodeText)
+  })
+
+  let displayed = false
+
+  const runButton = document.createElement('button')
+  runButton.textContent = 'show solution'
+  runButton.classList.add('button')
+  codeContainer.appendChild(runButton)
+
+  runButton.addEventListener('click', () => {
+    if (displayed === false) {
+      codeContainer.appendChild(outputContainer)
+      displayed = true
+    } else {
+      outputContainer.remove()
+      displayed = false
     }
-    return textArray
+  })
+
+  return codeContainer
 }
 
-function codeRunner(titleText,inputCode,outputCode){
+function createSidebar (htmlElement) {
+  const sidebarContainer = document.createElement('div')
+  sidebarContainer.classList.add('sidebarContainer')
 
-    const inputTextArray = textSplitter(inputCode);
-    const outputTextArray = textSplitter(outputCode);
+  const elementIDs = htmlElement.querySelectorAll('[id]')
 
-    const codeContainer = document.createElement("div");
-    codeContainer.classList.add("codeContainer");
+  elementIDs.forEach(element => {
+    const anchorTag = document.createElement('a')
+    anchorTag.textContent = element.dataset.idIdentifier
+    anchorTag.href = `#${element.id}`
 
-    const title = document.createElement("h3");
-    title.textContent = titleText || "title not given";
-    title.classList.add("codeRunnerTitle")
-    codeContainer.appendChild(title); 
+    const anchorHolder = document.createElement('div')
+    anchorHolder.appendChild(anchorTag)
+    sidebarContainer.appendChild(anchorHolder)
+  })
 
-
-    const inputContainer = document.createElement("div");
-    inputContainer.classList.add("inputContainer");
-    codeContainer.appendChild(inputContainer);
-
-    inputTextArray.forEach(element => {
-        const inputCodeText = document.createElement("p");
-        inputCodeText.textContent = element || "no output code"; 
-        inputContainer.appendChild(inputCodeText);
-    });
-
-    const outputContainer = document.createElement("div");
-    outputContainer.classList.add("inputContainer");
-
-    outputTextArray.forEach(element => {
-        const outputCodeText = document.createElement("p");
-        outputCodeText.textContent = element || "no output code"; 
-        outputContainer.appendChild(outputCodeText);
-    });
-
-    let displayed = false; 
-
-    const runButton = document.createElement("button");
-    runButton.textContent = "show solution"; 
-    runButton.classList.add("button");
-    codeContainer.appendChild(runButton);
-
-    runButton.addEventListener("click", () => {
-        if(displayed === false){
-            codeContainer.appendChild(outputContainer); 
-            displayed = true; 
-        } else {
-            outputContainer.remove();
-            displayed = false
-        }
-    });
-
-    return codeContainer
+  return sidebarContainer
 }
 
-function createSidebar(htmlElement){
-    const sidebarContainer = document.createElement("div"); 
-    sidebarContainer.classList.add("sidebarContainer")
+async function getAddsForRightSideBar () {
+  const rightSidebar = document.querySelector('.rightsideBarDiv')
+  const sideBarHight = rightSidebar.clientHeight
 
-    const elementIDs = htmlElement.querySelectorAll("[id]");
+  const adHight = 300
 
-    elementIDs.forEach(element => {
-        const anchorTag = document.createElement("a")
-        anchorTag.textContent = element.dataset.idIdentifier
-        anchorTag.href = `#${element.id}`;
+  const totalAds = Math.floor(sideBarHight / adHight)
+  console.log(totalAds)
 
-        const anchorHolder = document.createElement("div");
-        anchorHolder.appendChild(anchorTag)
-        sidebarContainer.appendChild(anchorHolder)
-    }); 
-
-    return sidebarContainer
-
-}
-
-async function getAddsForRightSideBar(){
-    const rightSidebar = document.querySelector('.rightsideBarDiv');
-    const sideBarHight = rightSidebar.clientHeight; 
-
-    const adHight = 300; 
-
-    const totalAds = Math.floor(sideBarHight / adHight) 
-    console.log(totalAds)
-
-    const response = await fetch("/getAds", {
+  const response = await fetch('/getAds', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({totalAds: totalAds})
-    })
+    body: JSON.stringify({ totalAds })
+  })
 
-    const data = await response.json()
-    return data.memes || [data]; 
+  const data = await response.json()
+  return data.memes || [data]
 }
 
-function populateRightSideBar(memes){
-    const rightSidebar = document.querySelector('.rightsideBarDiv');
+function populateRightSideBar (memes) {
+  const rightSidebar = document.querySelector('.rightsideBarDiv')
 
-    memes.forEach(meme =>{
-        const memeContainer = document.createElement("img");
-        memeContainer.classList.add("meme")
-        memeContainer.src = meme.url; 
-        memeContainer.alt = "a very funny meme"
-        rightSidebar.appendChild(memeContainer);
-    })
+  memes.forEach(meme => {
+    const memeContainer = document.createElement('img')
+    memeContainer.classList.add('meme')
+    memeContainer.src = meme.url
+    memeContainer.alt = 'a very funny meme'
+    rightSidebar.appendChild(memeContainer)
+  })
 }
 
 export default {
-    setupBasicPage: setupBasicPage,
-    setupLogo: setupLogo,
-    navbar: navbar,
-    createSection: createSection,
-    textBox: textBox,
-    codeRunner: codeRunner,
-    createSidebar: createSidebar,
-    getAddsForRightSideBar: getAddsForRightSideBar,
-    populateRightSideBar: populateRightSideBar,
+  setupBasicPage,
+  setupLogo,
+  navbar,
+  createSection,
+  textBox,
+  codeRunner,
+  createSidebar,
+  getAddsForRightSideBar,
+  populateRightSideBar
 }
