@@ -18,7 +18,7 @@ app.post("/getAds", async (req,res) => {
     const {totalAds} = req.body; 
     const memeApiResponse = await fetch (`https://meme-api.com/gimme/ProgrammerHumor/${totalAds}`)
     const data = await memeApiResponse.json();
-    res.json(data);
+    res.send(data);
 });
 
 const PORT = 8080; 
