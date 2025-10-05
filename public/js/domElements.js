@@ -176,7 +176,7 @@ async function getAddsForRightSideBar () {
   const totalAds = Math.floor(sideBarHight / adHight)
   console.log(totalAds)
 
-  const response = await fetch('/getAds', {
+  const response = await fetch('/api/getAds', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ totalAds })
