@@ -118,7 +118,7 @@
 }
 
 .inputContainer, .outputContainer {         
-  max-width: 50%;                
+  max-width: 70%;                
   background: #1a1a1a;           
   color: #f5f5f5;                
   font-family: 'Source Code Pro', monospace; 

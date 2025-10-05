@@ -69,17 +69,23 @@ page.appendChild(dom.codeRunner("Aquí hay un ejemplo de cómo usar una función
     "martin disfruta cocinar."
 ));
 
-dom.createSection("Bucles",lastAppendedID++,"Bucles"); 
+page.appendChild(dom.createSection("Bucles",lastAppendedID++,"Bucles")); 
 
-page.appendChild(dom.textBox("Bucles in javascript","Los bucles son algo que usamos muy a menudo en javascript, ahora repasaremos los tipos más comunes y cuándo se usan")); //Loops are something we use very often in javascript, we will now go over the most common types and when they are used 
+page.appendChild(dom.textBox("Bucles in javascript","Los bucles son algo que usamos muy a menudo en javascript, ahora repasaremos los tipos más comunes y cuándo se usan.")); //Loops are something we use very often in javascript, we will now go over the most common types and when they are used 
 
-page.appendChild(dom.textBox("Bucles in javascript","Los bucles son algo que usamos muy a menudo en javascript, ahora repasaremos los tipos más comunes y cuándo se usan")); //Loops are something we use very often in javascript, we will now go over the most common types and when they are used 
-
-
-page.appendChild(dom.codeRunner("Aquí hay un ejemplo de cómo usar una función de devolución de llamada",
-    "function ejecutanteDeAcciónGenérico(name, action) {\n return action(name)\n}\nfunction acciónDeCocción(name) {\nreturn `${name} disfruta cocinar.`\n}\nconsole.log(ejecutanteDeAcciónGenérico(Martin,acciónDeCocción))", 
-    "martin disfruta cocinar."
+page.appendChild(dom.codeRunner(".map en bucle",
+    "const numbers = [1, 2, 3, 4, 5];\nconst doubledNumbers = numbers.map((number) => number * 2);\nconsole.log(doubledNumbers)", 
+    "doubledNumbers = [2, 4, 6, 8, 10]"
 ));
+
+page.appendChild(dom.textBox(".map Explicación","arriba tenemos el método.map, que no convierte la matriz en un mapa. en su lugar, recorre la matriz y aplica nuestra función de devolución de llamada en cada elemento y devuelve una nueva matriz")); //above we have the .map method, which does not convert the array to a map. it instead loops over the array and apply our call back function on each element and return a new array 
+
+page.appendChild(dom.codeRunner(".forEach en bucle",
+    "const numbers = [1, 2, 3, 4, 5];\nconst printStatements = numbers.forEach(number =>{\nconsole.log(number)\n})\n", 
+    "1 2 3 4 5"
+));
+
+page.appendChild(dom.textBox(".forEach Explicación","con forEach simplemente recorremos cada elemento y hacemos algo para cada elemento, sin embargo, no devolvemos una nueva lista después. Úsalo cuando no te importen los valores después")); //with forEach we just loop over each element and do something for each element, however we do not return a new list after. use it when you don't care about the values afterwards
 
 
 const memes = await dom.getAddsForRightSideBar();
