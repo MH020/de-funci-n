@@ -16,6 +16,7 @@ let foodX;
 let foodY; 
 
 let gameOver = false; 
+let gameLoop;
 
 function placeFood() {
 
@@ -59,8 +60,10 @@ function gameOverModal(){
     buttonContainer.appendChild(restartButton); 
 
     restartButton.addEventListener("click", () => {
-        createSnakeGame(); 
+        context.clearRect(0, 0, board.width, board.height); 
+        gameOver = false; 
         modal.remove(); 
+        createSnakeGame(); 
     }); 
 
     const addScoreButton = document.createElement("button"); 
@@ -81,6 +84,7 @@ function update() {
     if (gameOver) {
         clearInterval(gameLoop);
         gameOverModal();
+        return;
     }
     // Background of a Game
     context.fillStyle = "green";
@@ -118,7 +122,7 @@ function update() {
         
         // Out of bound condition
         gameOver = true;
-        gameOverModal();
+        //gameOverModal();
     }
 
     for (let i = 0; i < snakeBody.length; i++) {
@@ -126,7 +130,7 @@ function update() {
             
             // Snake eats own body
             gameOver = true;
-            gameOverModal();
+            //gameOverModal();
         }
     }
 }
@@ -141,7 +145,7 @@ function createSnakeGame(){
     placeFood(); 
     document.addEventListener("keydown", changeDirection)
 
-    const gameLoop = setInterval(update, 1000/15); 
+    gameLoop = setInterval(update, 1000/15); 
 }
 
 createSnakeGame();
