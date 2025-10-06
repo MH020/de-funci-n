@@ -25,6 +25,10 @@ app.get('/firstServer', (req, res) => {
   res.sendFile(path.resolve('public/pages/serverBasics/serverBasics.html'))
 })
 
+app.get('/snakeGame', (req, res) => {
+  res.sendFile(path.resolve('public/pages/snakeGame/snakeGame.html'))
+})
+
 
 
 
