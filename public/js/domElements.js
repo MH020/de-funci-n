@@ -36,7 +36,7 @@ function navbar () {
   const links = [
     { text: 'home', href: '/' },
     { text: 'Lo básico', href: '/basics' },
-    { text: 'lesson2', href: '/' }
+    { text: 'lesson2', href: '/' },
     { text: 'snake Game!', href: '/snakegame'}
 
   ]
