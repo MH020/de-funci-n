@@ -37,6 +37,7 @@ function navbar () {
     { text: 'home', href: '/' },
     { text: 'Lo básico', href: '/basics' },
     { text: 'lesson2', href: '/' }
+    { text: 'snake Game!', href: '/snakegame'}
 
   ]
 

@@ -44,7 +44,7 @@ function changeDirection(e) {
     }
 }
 
-function gameoverhandler(){
+function gameOverModal(){
     const modal = document.createElement("div")
     modal.classList.add("modal"); 
 
@@ -52,11 +52,35 @@ function gameoverhandler(){
     title.textContent = "game over man game over"; 
 
     const buttonContainer = document.createElement("div"); 
+
+    const restartButton = document.createElement("button"); 
+    restartButton.textContent = "restart"; 
+
+    buttonContainer.appendChild(restartButton); 
+
+    restartButton.addEventListener("click", () => {
+        createSnakeGame(); 
+        modal.remove(); 
+    }); 
+
+    const addScoreButton = document.createElement("button"); 
+    addScoreButton.textContent = "restart"; 
+    buttonContainer.appendChild(addScoreButton); 
+
+    addScoreButton.addEventListener("click", () => {
+        
+    })
+
+    modal.appendChild(title);
+    modal.appendChild(buttonContainer);
+
+    document.body.appendChild(modal); 
 }
 
 function update() {
     if (gameOver) {
-        return;
+        clearInterval(gameLoop);
+        gameOverModal();
     }
     // Background of a Game
     context.fillStyle = "green";
@@ -94,7 +118,7 @@ function update() {
         
         // Out of bound condition
         gameOver = true;
-        alert("Game Over");
+        gameOverModal();
     }
 
     for (let i = 0; i < snakeBody.length; i++) {
@@ -102,7 +126,7 @@ function update() {
             
             // Snake eats own body
             gameOver = true;
-            alert("Game Over");
+            gameOverModal();
         }
     }
 }
@@ -117,7 +141,7 @@ function createSnakeGame(){
     placeFood(); 
     document.addEventListener("keydown", changeDirection)
 
-    setInterval(update, 1000/15); 
+    const gameLoop = setInterval(update, 1000/15); 
 }
 
 createSnakeGame();
