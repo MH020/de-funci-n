@@ -18,6 +18,7 @@ let foodY;
 let gameOver = false; 
 let gameLoop;
 let score = 0; 
+let gameContainer;
 let socreTitle; 
 
 function placeFood() {
@@ -72,7 +73,8 @@ function gameOverModal(){
         snakeBody.length = 0; 
         snakeX = blockSize * 5;
         snakeY = blockSize * 5;
-
+        score = 0; 
+        gameContainer.remove(); 
         modal.remove(); 
         createSnakeGame(); 
     }); 
@@ -150,7 +152,7 @@ function update() {
 
 function createSnakeGame(){
 
-    const gameContainer = document.createElement("div");
+    gameContainer = document.createElement("div");
     gameContainer.classList.add("gameContainer"); 
     document.body.appendChild(gameContainer);
 
