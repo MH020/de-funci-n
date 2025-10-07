@@ -17,6 +17,8 @@ let foodY;
 
 let gameOver = false; 
 let gameLoop;
+let score = 0; 
+let socreTitle; 
 
 function placeFood() {
 
@@ -61,7 +63,16 @@ function gameOverModal(){
 
     restartButton.addEventListener("click", () => {
         context.clearRect(0, 0, board.width, board.height); 
-        gameOver = false; 
+        gameOver = false;
+        board.remove();
+        snakeX = 0; 
+        snakeY = 0; 
+        speedX = 0; 
+        speedY = 0; 
+        snakeBody.length = 0; 
+        snakeX = blockSize * 5;
+        snakeY = blockSize * 5;
+
         modal.remove(); 
         createSnakeGame(); 
     }); 
@@ -93,9 +104,11 @@ function update() {
     // Set food color and position
     context.fillStyle = "yellow";
     context.fillRect(foodX, foodY, blockSize, blockSize);
-
+    // snake eats the food: 
     if (snakeX == foodX && snakeY == foodY) {
-        snakeBody.push([foodX, foodY]);
+        snakeBody.push([foodX, foodY]); 
+        score += 100; 
+        socreTitle.textContent = `your current score is ${score}`
         placeFood();
     }
 
@@ -136,13 +149,26 @@ function update() {
 }
 
 function createSnakeGame(){
+
+    const gameContainer = document.createElement("div");
+    gameContainer.classList.add("gameContainer"); 
+    document.body.appendChild(gameContainer);
+
     board = document.createElement("canvas")
     board.classList.add("board");
-    document.body.appendChild(board);
     board.height = total_row * blockSize;
     board.width = total_col * blockSize
     context = board.getContext("2d");
+    gameContainer.appendChild(board)
     placeFood(); 
+
+
+    const scoreBoard = document.createElement("div"); 
+    socreTitle = document.createElement("h2"); 
+    socreTitle.textContent = `your current score is ${score}`
+    scoreBoard.appendChild(socreTitle); 
+    gameContainer.appendChild(scoreBoard)
+
     document.addEventListener("keydown", changeDirection)
 
     gameLoop = setInterval(update, 1000/15); 
