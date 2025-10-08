@@ -64,12 +64,13 @@ function restartGame(){
 }
 
 async function postScore(name, score) {
-      const response = await fetch('/postScore', {
+    const response = await fetch('/postScore', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name: name, score: score })
   })
-  return response; 
+  const data = await response.json();
+  return {status: response.status, data}; 
 }
 
 function gameOverModal(){
@@ -140,9 +141,14 @@ function gameOverModal(){
             alert("Please enter a name between 1-4 characters");
             return;
         }
-        const scoreposted = await postScore(playerName,score);
-            
-
+        const {status , data} = await postScore(playerName,score);
+        if(status == 200){
+            alert(`your score of ${data.score} has been added to the leaderboard`)
+        }
+        modal.remove();
+        restartGame(); 
+        createSnakeGame();   
+        
         })
 
 

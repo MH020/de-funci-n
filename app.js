@@ -19,27 +19,28 @@ app.post('/postScore', async (req, res) => {
 
   const filePath = path.join(process.cwd(), "scores.json")
   if (!fs.existsSync(filePath)) {
-  fs.writeFileSync(filePath, JSON.stringify([]));
-}
+    fs.writeFileSync(filePath, JSON.stringify([]));
+  }
 
-const jsonData = fs.readFileSync(filePath, "utf8")
+  const jsonData = fs.readFileSync(filePath, "utf8")
 
 
-let scores ; 
+  let scores; 
 
-if(jsonData){
-  scores = JSON.parse(jsonData);
-} else {
-  scores = []; 
-}
+  if(jsonData){
+    scores = JSON.parse(jsonData);
+  } else {
+    scores = []; 
+  }
 
-const autoIncriment = scores.length + 1; 
+  const autoIncriment = scores.length + 1; 
 
-scores.push({id: autoIncriment, name: name, score: score})
+  scores.push({id: autoIncriment, name: name, score: score})
 
-fs.writeFileSync(filePath, JSON.stringify(scores));
+  fs.writeFileSync(filePath, JSON.stringify(scores));
 
-  res.send({Id: autoIncriment, message: "new entry added"})
+  res.send({score: score, message: "new entry added"})
+
 })
 
 app.get('/', (req, res) => {
