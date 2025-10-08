@@ -48,8 +48,34 @@ function changeDirection(e) {
     }
 }
 
+function restartGame(){
+    context.clearRect(0, 0, board.width, board.height); 
+    gameOver = false;
+    board.remove();
+    snakeX = 0; 
+    snakeY = 0; 
+    speedX = 0; 
+    speedY = 0; 
+    snakeBody.length = 0; 
+    snakeX = blockSize * 5;
+    snakeY = blockSize * 5;
+    score = 0; 
+    gameContainer.remove();     
+}
+
+async function postScore(name, score) {
+      const response = await fetch('/postScore', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: name, score: score })
+  })
+  return response; 
+}
+
 function gameOverModal(){
     const modal = document.createElement("div")
+    const modalContent  = document.createElement("div")
+    modal.appendChild(modalContent); 
     modal.classList.add("modal"); 
 
     const title = document.createElement("h3"); 
@@ -57,38 +83,74 @@ function gameOverModal(){
 
     const buttonContainer = document.createElement("div"); 
 
+    modalContent.appendChild(title);
+    modalContent.appendChild(buttonContainer);
+
     const restartButton = document.createElement("button"); 
     restartButton.textContent = "restart"; 
 
     buttonContainer.appendChild(restartButton); 
 
     restartButton.addEventListener("click", () => {
-        context.clearRect(0, 0, board.width, board.height); 
-        gameOver = false;
-        board.remove();
-        snakeX = 0; 
-        snakeY = 0; 
-        speedX = 0; 
-        speedY = 0; 
-        snakeBody.length = 0; 
-        snakeX = blockSize * 5;
-        snakeY = blockSize * 5;
-        score = 0; 
-        gameContainer.remove(); 
-        modal.remove(); 
-        createSnakeGame(); 
+        modal.remove();
+        restartGame(); 
+        createSnakeGame();  
     }); 
 
     const addScoreButton = document.createElement("button"); 
-    addScoreButton.textContent = "restart"; 
+    addScoreButton.textContent = "save score"; 
     buttonContainer.appendChild(addScoreButton); 
 
     addScoreButton.addEventListener("click", () => {
-        
+        modalContent.remove()
+        const saveScoreForm = document.createElement("div"); 
+        modal.appendChild(saveScoreForm); 
+
+        const saveScoreTitle = document.createElement("h2"); 
+        saveScoreTitle.textContent = "please input a nick name to save your score, max 4 chars"
+        saveScoreForm.appendChild(saveScoreTitle); 
+
+        const nameAndScoreHolder = document.createElement("div")
+        saveScoreForm.appendChild(nameAndScoreHolder)
+
+        const nameInput = document.createElement("input");
+        nameInput.placeholder = "Your name";
+        nameInput.maxLength = 4; // limit to 4 chars
+        nameAndScoreHolder.appendChild(nameInput);
+
+        const scoreDisplay = document.createElement("div")
+        scoreDisplay.textContent = score; 
+        nameAndScoreHolder.appendChild(scoreDisplay)
+
+        const saveScoreButtonContainer = document.createElement("div")
+        saveScoreForm.appendChild(saveScoreButtonContainer); 
+
+        const postScoreButton = document.createElement("button")
+        postScoreButton.textContent = "save score"
+        saveScoreButtonContainer.appendChild(postScoreButton)
+
+        const resetButton = document.createElement("button");
+        saveScoreButtonContainer.appendChild(resetButton); 
+        resetButton.textContent = "restart game "
+
+        postScoreButton.addEventListener("click", async () =>{
+            const playerName = nameInput.value
+
+            if (playerName.length === 0 || playerName.length > 4) {
+            alert("Please enter a name between 1-4 characters");
+            return;
+        }
+        const scoreposted = await postScore(playerName,score);
+            
+
+        })
+
+
+        resetButton.addEventListener("click", () => {
+
+        })
     })
 
-    modal.appendChild(title);
-    modal.appendChild(buttonContainer);
 
     document.body.appendChild(modal); 
 }
