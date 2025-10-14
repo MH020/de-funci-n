@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
 
   const template = readPage("./util/templates/page.html"); 
   const pageContent = buildTextBox(1) + buildTextBoxWithTag(1);
-  const homePage = template.replace("$$BODY_CONTENT$$", pageContent);
+  const homePage = template.replace("$$PAGE_CONTENT$$", pageContent);
 
 
 
