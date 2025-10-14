@@ -1,7 +1,7 @@
 import express from 'express'
 import fs from 'fs'
 import path from 'path'
-import { readPage, buildTextBox } from "./util/templateEngine/templateEngine.js"; 
+import { readPage, buildTextBox,buildTextBoxWithTag } from "./util/templateEngine/templateEngine.js"; 
 
 const app = express()
 
@@ -47,10 +47,12 @@ app.post('/postScore', async (req, res) => {
 app.get('/', (req, res) => {
 
   const template = readPage("./util/templates/page.html"); 
-  const pageContent = [1]
+  const pageContent = buildTextBox(1) + buildTextBoxWithTag(1);
+  const homePage = template.replace("$$BODY_CONTENT$$", pageContent);
 
 
-  res.sendFile(path.resolve('public/pages/index/index.html'))
+
+  res.send(homePage)
 })
 
 app.get('/basics', (req, res) => {
