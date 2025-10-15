@@ -156,13 +156,18 @@ function createSidebar (htmlElement) {
   const elementIDs = htmlElement.querySelectorAll('[id]')
 
   elementIDs.forEach(element => {
+    const textboxTitle = element.querySelector('h3');
+
     const anchorTag = document.createElement('a')
-    anchorTag.textContent = element.dataset.idIdentifier
+    anchorTag.textContent = textboxTitle.textContent
     anchorTag.href = `#${element.id}`
+    anchorTag.classList.add('sidebarLink');
 
     const anchorHolder = document.createElement('div')
     anchorHolder.appendChild(anchorTag)
+    anchorHolder.classList.add('sidebarItem');
     sidebarContainer.appendChild(anchorHolder)
+
   })
 
   return sidebarContainer

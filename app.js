@@ -4,9 +4,12 @@ import path from 'path'
 import { readPage, buildTextBox,buildTextBoxWithTag } from "./util/templateEngine/templateEngine.js"; 
 
 const app = express()
-
 app.use(express.static('public'))
 app.use(express.json())
+
+
+  const template = readPage("./util/templates/page.html"); 
+  const navbar = readPage("./util/componets/navbar.html")
 
 app.post('/api/getAds', async (req, res) => {
   const { totalAds } = req.body
@@ -45,13 +48,12 @@ app.post('/postScore', async (req, res) => {
 })
 
 app.get('/', (req, res) => {
-
-  const template = readPage("./util/templates/page.html"); 
   const pageContent = buildTextBox(1) + buildTextBoxWithTag(1);
-  const homePage = template.replace("$$PAGE_CONTENT$$", pageContent);
-
-
-
+  const homePage = template
+  .replace("$$navbar$$", navbar)
+  .replace("$$PAGE_CONTENT$$", pageContent)
+  .replace("$$PAGE_TITLE$$", "Bienvenido a mi documentación sobre Node")
+  .replace("$$SCRIPT_PATH$$", "/pages/index/index.js");
   res.send(homePage)
 })
 
