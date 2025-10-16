@@ -1,6 +1,6 @@
 import express from 'express'
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 import { readPage, buildTextBox,buildTextBoxWithTag } from "./util/templateEngine/templateEngine.js"; 
 
 const app = express()
@@ -19,7 +19,7 @@ app.post('/api/getAds', async (req, res) => {
 })
 
 app.post('/postScore', async (req, res) => {
-  const { name: name, score: score } = req.body
+  const { name, score } = req.body
 
   const filePath = path.join(process.cwd(), "scores.json")
   if (!fs.existsSync(filePath)) {
