@@ -10,6 +10,45 @@ export function readPage(path) {
 const textBoxHTML = readPage("./util/componets/textbox.html")
 const textBoxWithTagHTML = readPage("./util/componets/textBoxWithTag.html")
 
+const pElementHTML = readPage("./util/componets/pElement.html")
+const codeRunnerHTML = readPage("./util/componets/pElement.html")
+
+function textSplitter (text) {
+  const textArray = []
+  let start = 0
+
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === '\n') {
+      textArray.push(text.slice(start, i))
+      start = i + 1
+    }
+  }
+  if (start < text.length) {
+    textArray.push(text.slice(start))
+  }
+  return textArray
+}
+
+function buildCodeRunner(codeRunner_ID){
+  
+  let codeRunnerBoxes = [];
+
+  const jsonData = fs.readFileSync(path.resolve("./JsonDatabase/textBoxes.json")).toString(); 
+
+  codeRunnerBoxes = JSON.parse(jsonData);
+
+
+  const {coderunner_title,coderunner_input,coderunner_output} = codeRunnerBoxes.find(coderunner => coderunner.id === codeRunner_ID);
+
+  const inputLines = textSplitter(coderunner_input)
+  const inputLinesHTML = inputLines.map(input => pElementHTML.replace("$$STRING_CONTENT$$", input)).join("\n")
+  
+  return codeRunnerHTML
+  .replace("$$CODERUNNER_TITLE$$", coderunner_title)
+  .replace("$$CODERUNNER_INPUT$$", inputLinesHTML)
+  .replace("$$CODERUNNER_OUTPUT$$", coderunner_output)
+}
+
 export function buildTextBox(TEXTBOX_ID){
   let textBoxes = [];
 
@@ -18,7 +57,7 @@ export function buildTextBox(TEXTBOX_ID){
   textBoxes = JSON.parse(jsonData);
 
 
-  const {id, textbox_title,textBox_text,english_text, textbox_id} = textBoxes.find(textbox => textbox.id === TEXTBOX_ID); 
+  const {textbox_title,textBox_text,textbox_id} = textBoxes.find(textbox => textbox.id === TEXTBOX_ID); 
 
 
   return textBoxHTML
@@ -35,7 +74,7 @@ export function buildTextBoxWithTag(TEXTBOX_ID){
   textBoxes = JSON.parse(jsonData);
 
 
-  const {id,textbox_title,textBox_text,english_text,textbox_link, link_text} = textBoxes.find(textbox => textbox.id === TEXTBOX_ID); 
+  const {textbox_title,textBox_text,textbox_link, link_text} = textBoxes.find(textbox => textbox.id === TEXTBOX_ID); 
 
 
   return textBoxWithTagHTML

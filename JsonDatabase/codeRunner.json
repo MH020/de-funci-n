@@ -1,0 +1,15 @@
+[
+    {"id": 1,
+    "coderunner_title": "Función básica", 
+    "coderunner_input": "unction calculadora(){\n  return 5 + 5\n}",
+    "coderunner_output": "10" 
+},
+
+{"id": 2,
+    "coderunner_title": "Parámetros ejemplo", 
+    "coderunner_input": "function calculadora(num1,num2){\n  return num1 + num2\n}\n calculadora(10,10);",
+    "coderunner_output": "el retorno sería: 10" 
+}
+
+
+]  

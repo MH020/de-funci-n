@@ -25,7 +25,7 @@ page.appendChild(dom.textBox('que es una function?', functionsSectionDescription
 page.appendChild(dom.codeRunner('Función básica',
   'function calculadora(){\n  return 5 + 5\n}',
   '10'
-))
+)) //done
 
 page.appendChild(dom.textBox('Funciónes con Parámetros', 'Las funciones también pueden tener parámetros como este'))
 
