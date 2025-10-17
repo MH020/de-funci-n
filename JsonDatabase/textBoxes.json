@@ -124,6 +124,14 @@
     "textbox_id": 16,
     "coderunner_id": 11
   },
+  {
+    "id": 17,
+    "textbox_title": "Explinación exprés",
+    "textBox_text": "require(\"express\") importa el módulo Express. express() inicializa una aplicación Express. app es la aplicación Express que utilizamos para definir rutas e iniciar el servidor.",
+    "english_text": "require(\"express\") imports the Express module.express() initializes an Express app.app is the Express application that we use to define routes and start the server.",
+    "textbox_id": null,
+    "coderunner_id": null
+  }
   
 
 ]   
