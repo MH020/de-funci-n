@@ -9,6 +9,7 @@ export function readPage(path) {
 
 const textBoxHTML = readPage("./util/componets/textbox.html")
 const textBoxWithTagHTML = readPage("./util/componets/textBoxWithTag.html")
+const textBoxWithCoderunnerHTML = readPage("./util/componets/textboxWithCoderunner.html")
 
 const pElementHTML = readPage("./util/componets/pElement.html")
 const codeRunnerHTML = readPage("./util/componets/codeRunner.html")
@@ -88,6 +89,35 @@ export function buildTextBoxWithTag(TEXTBOX_ID){
   .replace("$$TEXTBOX_TEXT$$", textBox_text)
   .replace("$$TAG$$", textbox_link)
   .replace("$$LINK_TEXT$$", link_text);
+}
+
+export function buildTextBoxWithCoderunner(TEXTBOX_ID){
+    let textBoxes = [];
+
+  const jsonData = fs.readFileSync(path.resolve("./JsonDatabase/textBoxes.json")).toString(); 
+
+  textBoxes = JSON.parse(jsonData);
+
+
+ const textbox = textBoxes.find(textbox => textbox.id === TEXTBOX_ID); 
+ console.log("Available IDs:", textBoxes.map(tb => tb.id))
+
+  if(!textbox) {
+    console.log(`textbox with id: ${TEXTBOX_ID} could not be found for some reason`)
+  }
+
+  const {textbox_title,textBox_text, textbox_id, coderunner_id} = textbox
+
+  console.log(textbox_title)
+
+
+
+  return textBoxWithCoderunnerHTML
+  .replace("$$TEXTBOX_TITLE$$", textbox_title)
+  .replace("$$TEXTBOX_TEXT$$", textBox_text)
+  .replace("$$TEXTBOX_ID$$", textbox_id || " ")
+  .replace("$$CODERUNNER$$", buildCodeRunner(coderunner_id));
+
 }
 
 

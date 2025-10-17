@@ -9,7 +9,6 @@ we have learned so far as well as the technologies used.
 github information = all this code will be on my github where i have plenty of other stuff as well 
 
 
-functionDescription = "in javascript and node we use functions which are what javascript call it's methods
-a function looks like this"
+functionDescription = "in javascript and node we use functions which are what javascript call it's methods a function looks like this"
 
 arrow function description = arrow functions is a way to write functions in a shorter manner. and we often use them for callback functions, which we will go into later 

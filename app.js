@@ -1,7 +1,7 @@
 import express from 'express'
 import fs from 'node:fs'
 import path from 'node:path'
-import { readPage, buildTextBox,buildTextBoxWithTag , buildCodeRunner } from "./util/templateEngine/templateEngine.js"; 
+import { readPage, buildTextBox,buildTextBoxWithTag , buildCodeRunner , buildTextBoxWithCoderunner} from "./util/templateEngine/templateEngine.js"; 
 
 const app = express()
 app.use(express.static('public'))
@@ -59,13 +59,12 @@ app.get('/', (req, res) => {
 
 app.get('/basics', (req, res) => {
 
-  const pageContent = buildTextBox(1) + buildCodeRunner(1);
-  console.log(buildCodeRunner(1))
+  const pageContent = buildTextBoxWithCoderunner(3) + buildTextBoxWithCoderunner(4) + buildTextBoxWithCoderunner(5)
   const basicsPage = template
   .replace("$$navbar$$", navbar)
   .replace("$$PAGE_CONTENT$$", pageContent)
   .replace("$$PAGE_TITLE$$", "Esta página explicará los conceptos básicos de JavaScript y Node.")
-  //.replace("$$SCRIPT_PATH$$", "/pages/index/basics.js");
+  .replace("$$SCRIPT_PATH$$", "/pages/index/index.js");
   res.send(basicsPage)
 })
 
