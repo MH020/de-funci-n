@@ -1,7 +1,7 @@
 import express from 'express'
 import fs from 'node:fs'
 import path from 'node:path'
-import { readPage, buildTextBox,buildTextBoxWithTag , buildCodeRunner , buildTextBoxWithCoderunner} from "./util/templateEngine/templateEngine.js"; 
+import { readPage, buildTextBox,buildTextBoxWithTag , buildTextBoxWithCoderunner} from "./util/templateEngine/templateEngine.js"; 
 
 const app = express()
 app.use(express.static('public'))
@@ -72,7 +72,14 @@ app.get('/basics', (req, res) => {
 })
 
 app.get('/firstServer', (req, res) => {
-  res.sendFile(path.resolve('public/pages/serverBasics/serverBasics.html'))
+  const pageContent = ""
+  const firstServerPage = template
+
+  .replace("$$navbar$$", navbar)
+  .replace("$$PAGE_CONTENT$$", pageContent)
+  .replace("$$PAGE_TITLE$$", "Primer servidor y javascript en la parte posterior en forma de nodo")
+  .replace("$$SCRIPT_PATH$$", "/pages/index/index.js");
+  res.send(firstServerPage)
 })
 
 app.get('/snakeGame', (req, res) => {

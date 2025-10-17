@@ -91,5 +91,39 @@
     "english_text": ".filter calls the callback method on each item in the list, and if true, it is included in the new list that returns.filter. There is also a.find method that returns the first element that matches the condition",
     "textbox_id": 12,
     "coderunner_id": 8
-  }
+  }, 
+    {
+    "id": 13,
+    "textbox_title": "JavaScript en el backend",
+    "textBox_text": "Para ejecutar JavaScript de forma nativa en nuestra computadora, primero necesitamos Node, que es un entorno de tiempo de ejecución que nos permite ejecutar JavaScript fuera del navegador",
+    "english_text": "in order to run javascript on natively on our computer we first need node, which is a runtime environment that lets us to execute javascript outside of the browser  ",
+    "textbox_id": 13,
+    "coderunner_id": null
+  },
+    {
+    "id": 14,
+    "textbox_title": "nodo en el terminal",
+    "textBox_text": "Con Node instalado puedes ejecutar JavaScript en tu terminal sin nada más:",
+    "english_text": "with node installed you can run javascript in your terminal without anything else: ",
+    "textbox_id": null,
+    "coderunner_id": 9
+  },
+    {
+    "id": 15,
+    "textbox_title": "express",
+    "textBox_text": "Pero para ejecutar un servidor primero necesitamos un framework web, en este caso usaremos el módulo Node Express que es un framework web que podemos instalar a través del administrador de paquetes de Node, NPM.",
+    "english_text": "but in order to run a server we first need a web framework, in this instance we will use the node module express which is a web framework we can install via the node package manager, npm.  ",
+    "textbox_id": 15,
+    "coderunner_id": 10
+  },
+    {
+    "id": 16 ,
+    "textbox_title": "Uso exprés",
+    "textBox_text": "Para usar Express en nuestro proyecto de nodo, primero debemos importarlo a nuestro proyecto de node",
+    "english_text": "to actually use express in our node project we first need to import it into our node project ",
+    "textbox_id": 16,
+    "coderunner_id": 11
+  },
+  
+
 ]   

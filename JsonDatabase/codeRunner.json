@@ -46,5 +46,23 @@
         "coderunner_title": ".filter en bucle",
         "coderunner_input": "const numbers = [1, 2, 3, 4, 5];\nconst mayorQueTres = numbers.filter(number =>( number > 3);{\nconsole.log(mayorQueTres)\n})\n",
         "coderunner_output": "[4, 5]"
+    },
+    {
+        "id": 9,
+        "coderunner_title": "javascript en el terminal",
+        "coderunner_input": "en la terminal \n console.log(\"holla\")",
+        "coderunner_output": "holla"
+    },
+        {
+        "id": 10,
+        "coderunner_title": "Instalación de Express",
+        "coderunner_input": "npm install express \n o npm i express",
+        "coderunner_output": "node modules carpeta y package.json"
+    },
+        {
+        "id": 11,
+        "coderunner_title": "Importar y usar Express",
+        "coderunner_input": "const express = require(\"express\")\n const app = express()",
+        "coderunner_output": "Ahora podemos usar Express como nuestro marco web"
     }
 ]
