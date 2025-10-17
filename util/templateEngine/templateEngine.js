@@ -11,7 +11,8 @@ const textBoxHTML = readPage("./util/componets/textbox.html")
 const textBoxWithTagHTML = readPage("./util/componets/textBoxWithTag.html")
 
 const pElementHTML = readPage("./util/componets/pElement.html")
-const codeRunnerHTML = readPage("./util/componets/pElement.html")
+const codeRunnerHTML = readPage("./util/componets/codeRunner.html")
+
 
 function textSplitter (text) {
   const textArray = []
@@ -29,11 +30,11 @@ function textSplitter (text) {
   return textArray
 }
 
-function buildCodeRunner(codeRunner_ID){
+export function buildCodeRunner(codeRunner_ID){
   
   let codeRunnerBoxes = [];
 
-  const jsonData = fs.readFileSync(path.resolve("./JsonDatabase/textBoxes.json")).toString(); 
+  const jsonData = fs.readFileSync(path.resolve("./JsonDatabase/codeRunner.json")).toString(); 
 
   codeRunnerBoxes = JSON.parse(jsonData);
 
@@ -41,13 +42,18 @@ function buildCodeRunner(codeRunner_ID){
   const {coderunner_title,coderunner_input,coderunner_output} = codeRunnerBoxes.find(coderunner => coderunner.id === codeRunner_ID);
 
   const inputLines = textSplitter(coderunner_input)
+  console.log(inputLines)
   const inputLinesHTML = inputLines.map(input => pElementHTML.replace("$$STRING_CONTENT$$", input)).join("\n")
+  console.log(inputLinesHTML)
   
   return codeRunnerHTML
   .replace("$$CODERUNNER_TITLE$$", coderunner_title)
   .replace("$$CODERUNNER_INPUT$$", inputLinesHTML)
   .replace("$$CODERUNNER_OUTPUT$$", coderunner_output)
+  
 }
+
+
 
 export function buildTextBox(TEXTBOX_ID){
   let textBoxes = [];

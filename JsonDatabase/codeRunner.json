@@ -1,15 +1,50 @@
 [
-    {"id": 1,
-    "coderunner_title": "Función básica", 
-    "coderunner_input": "unction calculadora(){\n  return 5 + 5\n}",
-    "coderunner_output": "10" 
-},
-
-{"id": 2,
-    "coderunner_title": "Parámetros ejemplo", 
-    "coderunner_input": "function calculadora(num1,num2){\n  return num1 + num2\n}\n calculadora(10,10);",
-    "coderunner_output": "el retorno sería: 10" 
-}
-
-
-]  
+    {
+        "id": 1,
+        "coderunner_title": "Función básica",
+        "coderunner_input": "function calculadora(){\n  return 5 + 5\n}",
+        "coderunner_output": "10"
+    },
+    {
+        "id": 2,
+        "coderunner_title": "Parámetros ejemplo",
+        "coderunner_input": "function calculadora(num1,num2){\n  return num1 + num2\n}\n calculadora(10,10);",
+        "coderunner_output": "el retorno sería: 10"
+    },
+    {
+        "id": 3,
+        "coderunner_title": "Función anónima ejemplo",
+        "coderunner_input": "const obtenerFunciónAnónimaAleatoria = function (min, max) {\n return Math.floor(Math.random() * (max + 1 - min) + min)\n}\n getRandomAnonymousFunction(10,10);",
+        "coderunner_output": "el retorno podría ser ya que usamos random: 14"
+    },
+    {
+        "id": 4,
+        "coderunner_title": "Aquí está la misma función de antes pero como una función de flecha",
+        "coderunner_input": "const getRandomAnonymousFunction = (min, max) =>\n Math.floor(Math.random() * (max + 1 - min) + min);\n getRandomAnonymousFunction(1,10);",
+        "coderunner_output": "el retorno podría ser ya que usamos random: 8"
+    },
+    {
+        "id": 5,
+        "coderunner_title": "Aquí hay un ejemplo de cómo usar una función de devolución de llamada",
+        "coderunner_input": "function ejecutanteDeAcciónGenérico(name, action) {\n return action(name)\n}\nfunction acciónDeCocción(name) {\nreturn `${name} disfruta cocinar.`\n}\nconsole.log(ejecutanteDeAcciónGenérico(Martin,acciónDeCocción))",
+        "coderunner_output": "martin disfruta cocinar."
+    },
+    {
+        "id": 6,
+        "coderunner_title": ".map en bucle",
+        "coderunner_input": "const numbers = [1, 2, 3, 4, 5];\nconst doubledNumbers = numbers.map((number) => number * 2);\nconsole.log(doubledNumbers)",
+        "coderunner_output": "doubledNumbers = [2, 4, 6, 8, 10]"
+    },
+    {
+        "id": 7,
+        "coderunner_title": ".forEach en bucle",
+        "coderunner_input": "const numbers = [1, 2, 3, 4, 5];\nconst printStatements = numbers.forEach(number =>{\nconsole.log(number)\n})\n",
+        "coderunner_output": "1 2 3 4 5"
+    },
+    {
+        "id": 8,
+        "coderunner_title": ".filter en bucle",
+        "coderunner_input": "const numbers = [1, 2, 3, 4, 5];\nconst mayorQueTres = numbers.filter(number =>( number > 3);{\nconsole.log(mayorQueTres)\n})\n",
+        "coderunner_output": "[4, 5]"
+    }
+]
