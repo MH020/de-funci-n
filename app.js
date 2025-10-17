@@ -59,7 +59,10 @@ app.get('/', (req, res) => {
 
 app.get('/basics', (req, res) => {
 
-  const pageContent = buildTextBoxWithCoderunner(3) + buildTextBoxWithCoderunner(4) + buildTextBoxWithCoderunner(5)
+  const pageContent = buildTextBoxWithCoderunner(3) + buildTextBoxWithCoderunner(4) + buildTextBoxWithCoderunner(5) + buildTextBoxWithCoderunner(6)
+                    + buildTextBox(7) + buildTextBoxWithCoderunner(8) + buildTextBoxWithCoderunner(9) + buildTextBox(10) + buildTextBoxWithCoderunner(11) 
+                    + buildTextBoxWithCoderunner(12)
+
   const basicsPage = template
   .replace("$$navbar$$", navbar)
   .replace("$$PAGE_CONTENT$$", pageContent)

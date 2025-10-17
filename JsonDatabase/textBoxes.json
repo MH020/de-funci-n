@@ -24,7 +24,7 @@
     "id": 4,
     "textbox_title": "Funciónes con Parámetros",
     "textBox_text": "Las funciones también pueden tener parámetros como este",
-    "english_text": "TODO: Add English translation",
+    "english_text": "Functions can also have parameters like this",
     "textbox_id": 4,
     "coderunner_id": 2
   },
@@ -32,7 +32,7 @@
     "id": 5,
     "textbox_title": "Función anónima",
     "textBox_text": "Las funciones anónimas son funciones que no tienen un nombre",
-    "english_text": "TODO: Add English translation",
+    "english_text": "Anonymous functions are functions that don't have a name",
     "textbox_id": 5,
     "coderunner_id": 3
   },
@@ -40,7 +40,7 @@
     "id": 6,
     "textbox_title": "Funciones de flecha",
     "textBox_text": "Las funciones de flecha son una forma de escribir funciones de una manera más corta. y a menudo los usamos para funciones de devolución de llamada, que veremos más adelante.",
-    "english_text": "TODO: Add English translation",
+    "english_text": "Arrow functions are a way of writing functions in a shorter way. and we often use them for callback functions, which we'll look at later.",
     "textbox_id": 6,
     "coderunner_id": 4
   },
@@ -48,7 +48,7 @@
     "id": 7,
     "textbox_title": "Las Funciones de flecha no es lamda in el java",
     "textBox_text": "Las funciones de flecha pueden parecerse mucho a lamda en java, pero no son lo mismo.",
-    "english_text": "TODO: Add English translation",
+    "english_text": "Arrow functions may look a lot like lamda  functions in java, but they're not the same.",
     "textbox_id": null,
     "coderunner_id": null
   },
@@ -56,7 +56,7 @@
     "id": 8,
     "textbox_title": "Una función de devolución de llamada",
     "textBox_text": "Una función de devolución de llamada o también llamada función de orden superior es una función que toma otra función como argumento",
-    "english_text": "TODO: Add English translation",
+    "english_text": "A callback function is also called a higher-order function is a function that takes another function as an argument",
     "textbox_id": 8,
     "coderunner_id": 5
   },
@@ -64,7 +64,7 @@
     "id": 9,
     "textbox_title": "Bucles in javascript",
     "textBox_text": "Los bucles son algo que usamos muy a menudo en javascript, ahora repasaremos los tipos más comunes y cuándo se usan.",
-    "english_text": "TODO: Add English translation",
+    "english_text": "Loops are something we use very often in javascript, now we'll go over the most common types and when they're used.",
     "textbox_id": 9,
     "coderunner_id": 6
   },
@@ -72,7 +72,7 @@
     "id": 10,
     "textbox_title": ".map Explicación",
     "textBox_text": "arriba tenemos el método.map, que no convierte la matriz en un mapa. en su lugar, recorre la matriz y aplica nuestra función de devolución de llamada en cada elemento y devuelve una nueva matriz",
-    "english_text": "TODO: Add English translation",
+    "english_text": "Above we have the.map method, which does not convert the array into a map. Instead, it loops through the array and applies our callback function to each element and returns a new array",
     "textbox_id": 10,
     "coderunner_id": null
   },
@@ -80,7 +80,7 @@
     "id": 11,
     "textbox_title": ".forEach Explicación",
     "textBox_text": "con forEach simplemente recorremos cada elemento y hacemos algo para cada elemento, sin embargo, no devolvemos una nueva lista después. Úsalo cuando no te importen los valores después",
-    "english_text": "TODO: Add English translation",
+    "english_text": "with forEach we simply go through each item and do something for each item, however, we don't return a new list afterwards. Use it when you don't care about values afterwards",
     "textbox_id": 11,
     "coderunner_id": 7
   },
@@ -88,7 +88,7 @@
     "id": 12,
     "textbox_title": ".filter Explicación",
     "textBox_text": ".filter llama al método de devolución de llamada en cada elemento de la lista y, si es verdadero, se incluye en la nueva lista que devuelve .filter.También hay un método .find que devuelve el primer elemento que coincide con la condición",
-    "english_text": "TODO: Add English translation",
+    "english_text": ".filter calls the callback method on each item in the list, and if true, it is included in the new list that returns.filter. There is also a.find method that returns the first element that matches the condition",
     "textbox_id": 12,
     "coderunner_id": 8
   }
