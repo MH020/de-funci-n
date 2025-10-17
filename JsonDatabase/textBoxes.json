@@ -131,7 +131,24 @@
     "english_text": "require(\"express\") imports the Express module.express() initializes an Express app.app is the Express application that we use to define routes and start the server.",
     "textbox_id": null,
     "coderunner_id": null
+  },
+  {
+    "id": 18,
+    "textbox_title": "puerto de configuración",
+    "textBox_text": "Después de configurar Express en nuestra aplicación de nodo, podemos definir en qué puerto debe ejecutarse. Lo hacemos así:",
+    "english_text": "after setting up express on our node app we can then define what port it should run on. we do that like this",
+    "textbox_id": null,
+    "coderunner_id": 12
+  },
+  {
+    "id": 19,
+    "textbox_title": "Explicación de puertos",
+    "textBox_text": "Aquí hay dos formas en que definimos nuestros puertos. ambos hacen lo mismo. Pero el segundo es un mejor estándar y muestra en qué puerto se ejecuta el servidor en la terminal. La escucha de la aplicación siempre debe estar en la parte inferior del archivo",
+    "english_text": "here is two ways we define our ports. they both do the same. but the 2nd one is a better standard and displays what port the server is running on in the terminal. the app listen should allways be at the buttom of the file ",
+    "textbox_id": null,
+    "coderunner_id": null
   }
+
   
 
 ]   
