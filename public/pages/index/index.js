@@ -10,3 +10,15 @@ const memes = await dom.getAddsForRightSideBar()
 dom.populateRightSideBar(memes)
 
 sidebar.appendChild(dom.createSidebar(page))
+
+document.querySelectorAll('.button').forEach(button => {
+  const outputSelector = `.outputContainer[data-output="${button.dataset.output}"]`;
+  const output = document.querySelector(outputSelector);
+
+  button.addEventListener('click', () => {
+    const isVisible = output.style.display === 'block';
+    output.style.display = isVisible ? 'none' : 'block';
+    button.textContent = isVisible ? 'show solution' : 'hide solution';
+  });
+});
+

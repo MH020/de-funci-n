@@ -40,17 +40,19 @@ export function buildCodeRunner(codeRunner_ID){
   codeRunnerBoxes = JSON.parse(jsonData);
 
 
-  const {coderunner_title,coderunner_input,coderunner_output} = codeRunnerBoxes.find(coderunner => coderunner.id === codeRunner_ID);
+  const {id, coderunner_title,coderunner_input,coderunner_output} = codeRunnerBoxes.find(coderunner => coderunner.id === codeRunner_ID);
 
   const inputLines = textSplitter(coderunner_input)
-  console.log(inputLines)
+
   const inputLinesHTML = inputLines.map(input => pElementHTML.replace("$$STRING_CONTENT$$", input)).join("\n")
-  console.log(inputLinesHTML)
+
   
   return codeRunnerHTML
   .replace("$$CODERUNNER_TITLE$$", coderunner_title)
   .replace("$$CODERUNNER_INPUT$$", inputLinesHTML)
   .replace("$$CODERUNNER_OUTPUT$$", coderunner_output)
+  .replace("$$CONTAINER_DATA$$", id)
+  .replace("$$BUTTON_DATA$$", id)
   
 }
 
