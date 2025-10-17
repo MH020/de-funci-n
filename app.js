@@ -11,12 +11,6 @@ app.use(express.json())
   const template = readPage("./util/templates/page.html"); 
   const navbar = readPage("./util/componets/navbar.html")
 
-app.get('/api/ads', async (req, res) => {
-  const  totalAds = req.query.totalAds
-  const memeApiResponse = await fetch(`https://meme-api.com/gimme/ProgrammerHumor/${totalAds}`)
-  const data = await memeApiResponse.json()
-  res.send(data)
-})
 
 app.post('/score', async (req, res) => {
   const { name, score } = req.body
@@ -84,6 +78,13 @@ app.get('/firstServer', (req, res) => {
 
 app.get('/snakeGame', (req, res) => {
   res.sendFile(path.resolve('public/pages/snakeGame/snakeGame.html'))
+})
+
+app.get('/api/ads', async (req, res) => {
+  const  totalAds = req.query.totalAds
+  const memeApiResponse = await fetch(`https://meme-api.com/gimme/ProgrammerHumor/${totalAds}`)
+  const data = await memeApiResponse.json()
+  res.send(data)
 })
 
 
