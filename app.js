@@ -15,7 +15,7 @@ app.use(express.json())
 app.post('/score', async (req, res) => {
   const { name, score } = req.body
 
-  const filePath = path.join(process.cwd(), "scores.json")
+  const filePath = path.resolve("JsonDatabase/scores.json")
   if (!fs.existsSync(filePath)) {
     fs.writeFileSync(filePath, JSON.stringify([]));
   }
