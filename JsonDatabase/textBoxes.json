@@ -166,14 +166,22 @@
   },
     {
     "id": 22,
-    "textbox_title": "",
-    "textBox_text": "",
-    "english_text": "",
+    "textbox_title": "variable path",
+    "textBox_text": "Cuando se trata de la ruta, también podemos tomar variables de ruta",
+    "english_text": "when it comes to the path we can also intake path variables ",
+    "textbox_id": 22,
+    "coderunner_id": 14
+  },
+    {
+    "id": 23,
+    "textbox_title": "Solicitar parámetros",
+    "textBox_text": "here we use request.parms to acress the perramitor  we input into the path and then use it to display it back on the client side via responds.",
+    "english_text": "Aquí usamos request.parms para acress el perramitor que ingresamos en la ruta y luego lo usamos para mostrarlo nuevamente en el lado del cliente a través de responds.",
     "textbox_id": null,
     "coderunner_id": null
   },
   {
-    "id": 20,
+    "id": 24,
     "textbox_title": "",
     "textBox_text": "",
     "english_text": "",

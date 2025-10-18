@@ -182,7 +182,7 @@ async function getAddsForRightSideBar () {
   const totalAds = Math.floor(sideBarHight / adHight)
   console.log(totalAds)
 
-  const response = await fetch(`/api/ads?totalAds=${totalAds}`) //did we post ? why ? 
+  const response = await fetch(`/api/ads?totalAds=${totalAds}`) //why did we post ? why ? 
 
   const data = await response.json()
   return data.memes || [data]

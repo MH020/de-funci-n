@@ -66,9 +66,11 @@ app.get('/basics', (req, res) => {
 })
 
 app.get('/firstServer', (req, res) => {
-  const pageContent = ""
-  const firstServerPage = template
+  const pageContent = buildTextBox(13) + buildTextBoxWithCoderunner(14) + buildTextBoxWithCoderunner(15) + buildTextBoxWithCoderunner(16) + 
+                      buildTextBox(17) + buildTextBoxWithCoderunner(18) + buildTextBox(19) + buildTextBoxWithCoderunner(20) +
+                      buildTextBox(21) + buildTextBoxWithCoderunner(22) + buildTextBox(23)
 
+  const firstServerPage = template
   .replace("$$navbar$$", navbar)
   .replace("$$PAGE_CONTENT$$", pageContent)
   .replace("$$PAGE_TITLE$$", "Primer servidor y javascript en la parte posterior en forma de nodo")

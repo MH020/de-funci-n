@@ -78,10 +78,10 @@
         "coderunner_output": "{\"name\" : \"neptune\"}"
     },
     {
-        "id": 13,
-        "coderunner_title": "",
-        "coderunner_input": "",
-        "coderunner_output": ""
+        "id": 14,
+        "coderunner_title": "Variables de ruta en la URL",
+        "coderunner_input": "app.get(\"/waterfalls/:likingScore\", (req, res) => {\n res.send({response: `u like waterfalls this much: ${req.params.likingScore}`})\n })",
+        "coderunner_output": "response: `u like waterfalls this much: 10"
     }
 
 ]

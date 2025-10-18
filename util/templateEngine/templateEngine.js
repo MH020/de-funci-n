@@ -41,7 +41,12 @@ export function buildCodeRunner(codeRunner_ID){
   codeRunnerBoxes = JSON.parse(coderunnerJsonData);
 
 
-  const {id, coderunner_title,coderunner_input,coderunner_output} = codeRunnerBoxes.find(coderunner => coderunner.id === codeRunner_ID);
+  const coderunner = codeRunnerBoxes.find(coderunner => coderunner.id === codeRunner_ID);
+  if (!coderunner) {
+    console.log(`coderunner with id: ${codeRunner_ID} could not be found for some reason`)
+  }
+
+  const {id, coderunner_title,coderunner_input,coderunner_output} = coderunner
 
   const inputLines = textSplitter(coderunner_input)
 
@@ -99,23 +104,23 @@ export function buildTextBoxWithCoderunner(TEXTBOX_ID){
 
 
  const textbox = textBoxes.find(textbox => textbox.id === TEXTBOX_ID); 
- console.log("Available IDs:", textBoxes.map(tb => tb.id))
-
   if(!textbox) {
     console.log(`textbox with id: ${TEXTBOX_ID} could not be found for some reason`)
   }
 
-  const {textbox_title,textBox_text, textbox_id, coderunner_id} = textbox
+  const {id, textbox_title,textBox_text, textbox_id, coderunner_id} = textbox
 
-  console.log(textbox_title)
-
+  const codeRunnerHTML = buildCodeRunner(coderunner_id)
+  if(!codeRunnerHTML){
+    console.log(`could not create coderunner with id: ${coderunner_id} for textbox with id ${id}`)
+  }
 
 
   return textBoxWithCoderunnerHTML
   .replace("$$TEXTBOX_TITLE$$", textbox_title)
   .replace("$$TEXTBOX_TEXT$$", textBox_text)
   .replace("$$TEXTBOX_ID$$", textbox_id || " ")
-  .replace("$$CODERUNNER$$", buildCodeRunner(coderunner_id));
+  .replace("$$CODERUNNER$$", codeRunnerHTML);
 
 }
 
