@@ -28,7 +28,6 @@ function lineReaderQuestion(questionText, value){
 async function databaseScript(){
     const answer = await lineReaderQuestion("Press 1 to make a textbox with an associated coderunner.\nPress 2 to just make a textbox.\nPress 3 to close.\n");
     if (answer === '1') {
-
         console.log("You chose to make a textbox with a coderunner.");
 
 
@@ -38,8 +37,17 @@ async function databaseScript(){
 
         const english_text = await lineReaderQuestion("Enter english_text:")
 
+        const idQuestion = await lineReaderQuestion("should this textbox have a id to be shown in the sidebar? press 1 for yes, anything else for no")
+
         const id = textboxJson.length + 1; 
-        const textbox_id = id; 
+        let textbox_id
+
+        if(idQuestion == 1){
+             textbox_id = id;
+        } else {
+            textbox_id = null
+        }
+
         const coderunner_id = coderunnerJson.length + 1; 
 
 
@@ -61,11 +69,45 @@ async function databaseScript(){
 
         fs.writeFileSync(textboxJsonPath, JSON.stringify(textboxJson),null,2);
         fs.writeFileSync(coderunnerJsonPath, JSON.stringify(coderunnerJson,null,2));
+        console.log("Textbox and coderunner saved.");
         lineReader.close();
       
     } else if (answer === '2') {
-      console.log("you chose to just make a textbox.");
-      lineReader.close();
+        console.log("you chose to just make a textbox.");
+
+        const textbox_title = await lineReaderQuestion("Enter textbox_title:")
+
+        const textBox_text = await lineReaderQuestion("Enter textBox_text:")
+
+        const english_text = await lineReaderQuestion("Enter english_text:")
+
+        const idQuestion = await lineReaderQuestion("should this textbox have a id to be shown in the sidebar? press 1 for yes, anything else for no")
+
+        const id = textboxJson.length + 1; 
+        let textbox_id
+
+        if(idQuestion == 1){
+             textbox_id = id;
+        } else {
+            textbox_id = null
+        }
+
+        const coderunner_id = null 
+
+
+        const textbox = {id,textbox_title,textBox_text,english_text,textbox_id, coderunner_id}
+
+        textboxJson.push(textbox)
+        coderunnerJson.push(coderunner)
+
+        fs.writeFileSync(textboxJsonPath, JSON.stringify(textboxJson),null,2);
+        fs.writeFileSync(coderunnerJsonPath, JSON.stringify(coderunnerJson,null,2));
+        lineReader.close();
+
+        
+
+        console.log("Textbox saved.");
+        lineReader.close();
 
     } else if (answer === '3') {
       console.log("closing...");
