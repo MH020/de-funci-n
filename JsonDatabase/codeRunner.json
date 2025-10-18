@@ -70,6 +70,18 @@
         "coderunner_title": "puerto de configuración 8080",
         "coderunner_input": "app.listen(8080) o \n const PORT = 8080 \n app.listen(PORT, () => {\n   console.log('app startet on port', PORT)\n  })\n ",
         "coderunner_output": "app startet on port 8080"
+    },
+        {
+        "id": 13,
+        "coderunner_title": "Función Express para métodos HTTP",
+        "coderunner_input": "app.get(\"/planets\", (req, res) => {\n res.send({name: \"jupiter\"})\n})",
+        "coderunner_output": "{\"name\" : \"neptune\"}"
+    },
+    {
+        "id": 13,
+        "coderunner_title": "",
+        "coderunner_input": "",
+        "coderunner_output": ""
     }
 
 ]

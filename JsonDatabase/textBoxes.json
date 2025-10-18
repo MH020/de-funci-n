@@ -137,7 +137,7 @@
     "textbox_title": "puerto de configuración",
     "textBox_text": "Después de configurar Express en nuestra aplicación de nodo, podemos definir en qué puerto debe ejecutarse. Lo hacemos así:",
     "english_text": "after setting up express on our node app we can then define what port it should run on. we do that like this",
-    "textbox_id": null,
+    "textbox_id": 18,
     "coderunner_id": 12
   },
   {
@@ -147,7 +147,40 @@
     "english_text": "here is two ways we define our ports. they both do the same. but the 2nd one is a better standard and displays what port the server is running on in the terminal. the app listen should allways be at the buttom of the file ",
     "textbox_id": null,
     "coderunner_id": null
+  },
+    {
+    "id": 20,
+    "textbox_title": "Métodos HTTP en Express",
+    "textBox_text": "Ahora podemos comenzar a definir nuestros puntos finales y nuestros métodos HTTP. Es lo mismo para todos los métodos en Express, así que solo mostraré el método Get",
+    "english_text": "now we can begin to define our endpoints and our http methods. it is the same for all the methods in express so i will just show get method ",
+    "textbox_id": 20,
+    "coderunner_id": 13
+  },
+    {
+    "id": 21,
+    "textbox_title": ".get explinación",
+    "textBox_text": "Arriba hay un ejemplo de cómo usar la función express.get. La función toma 2 argumentos, el punto final y la función de devolución de llamada. La función de devolución de llamada toma dos parámetros: req (el objeto de solicitud) y res (el objeto de respuesta).",
+    "english_text": "above is a example of how to use the express .get function. the function takes 2 arguments, the endpoint and the callback function. The callback function takes  two parameters: req (the request object) and res (the response object).",
+    "textbox_id": null,
+    "coderunner_id": null
+  },
+    {
+    "id": 22,
+    "textbox_title": "",
+    "textBox_text": "",
+    "english_text": "",
+    "textbox_id": null,
+    "coderunner_id": null
+  },
+  {
+    "id": 20,
+    "textbox_title": "",
+    "textBox_text": "",
+    "english_text": "",
+    "textbox_id": null,
+    "coderunner_id": null
   }
+
 
   
 
