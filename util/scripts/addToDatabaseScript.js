@@ -67,7 +67,7 @@ async function databaseScript(){
         textboxJson.push(textbox)
         coderunnerJson.push(coderunner)
 
-        fs.writeFileSync(textboxJsonPath, JSON.stringify(textboxJson),null,2);
+        fs.writeFileSync(textboxJsonPath, JSON.stringify(textboxJson,null,2));
         fs.writeFileSync(coderunnerJsonPath, JSON.stringify(coderunnerJson,null,2));
         console.log("Textbox and coderunner saved.");
         lineReader.close();
