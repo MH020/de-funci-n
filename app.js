@@ -35,9 +35,9 @@ app.post('/scores', async (req, res) => {
 
   scores.push({id: autoIncriment, name: name, score: score})
 
-  fs.writeFileSync(filePath, JSON.stringify(scores));
+  fs.writeFileSync(filePath, JSON.stringify(scores,null,2));
 
-  res.send({score: score, message: "new entry added"})
+  res.status(200).send({score: score, message: "new entry added"})
 
 })
 
@@ -93,11 +93,27 @@ app.get('/snakeGame', (req, res) => {
   res.sendFile(path.resolve('public/pages/snakeGame/snakeGame.html'))
 })
 
+app.get('/scores', (req,res) => {
+
+  try {
+  const filePath = path.resolve("JsonDatabase/scores.json")
+  const jsonData = fs.readFileSync(filePath).toString()
+
+  const scores = JSON.parse(jsonData);
+
+  res.status(200).send(scores);
+    
+} catch (error){
+  console.error("Error loading scores:", error.message);
+  res.status(500).send({ error: 500, message: "Could not read or parse scores file." });
+}
+})
+
 app.get('/api/ads', async (req, res) => {
   const  totalAds = req.query.totalAds
   const memeApiResponse = await fetch(`https://meme-api.com/gimme/ProgrammerHumor/${totalAds}`)
   const data = await memeApiResponse.json()
-  res.send(data)
+  res.status(200).send(data)
 })
 
 
