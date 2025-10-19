@@ -1,7 +1,298 @@
 [
-    {"id": 1, 
-    "textbox_title": "el propósito", 
+  {
+    "id": 1,
+    "textbox_title": "el propósito",
     "textBox_text": "Bienvenidos a mi página de documentación para la primera mitad del semestre de nodos de 2025 en EK Esta página tiene como objetivo documentar los temas que hemos tratado en clase hasta ahora. Intentaré ofrecer una descripción detallada de cada elemento utilizado asi como las tecnologías utilizadas",
-    "english_text": "welcome to my documentation page for the first half of the node semester of 2025 on EK. This page is ment to document the subjects we have been though doing class /n so far, i will try to give a detailed description of each element used with code examples when needed. this page also display relevent information about the terminal commands /n we have learned so far as well as the technologies used"
-}
-]   
+    "english_text": "welcome to my documentation page for the first half of the node semester of 2025 on EK. This page is ment to document the subjects we have been though doing class /n so far, i will try to give a detailed description of each element used with code examples when needed. this page also display relevent information about the terminal commands /n we have learned so far as well as the technologies used",
+    "textbox_id": 1,
+    "coderunner_id": null
+  },
+  {
+    "id": 2,
+    "textbox_title": "Información de GitHub",
+    "textBox_text": "todo este código estará en mi GitHub, donde también tengo muchas otras cosas.",
+    "english_text": "welcome to my documentation page for the first half of the node semester of 2025 on EK. This page is ment to document the subjects we have been though doing class /n so far, i will try to give a detailed description of each element used with code examples when needed. this page also display relevent information about the terminal commands /n we have learned so far as well as the technologies used",
+    "textbox_id": 2,
+    "coderunner_id": null
+  },
+  {
+    "id": 3,
+    "textbox_title": "que es una function?",
+    "textBox_text": "En JavaScript y Node utilizamos funciones, que son lo que JavaScript denomina métodos. /n Una función se ve así:",
+    "english_text": "in javascript and node we use functions which are what javascript call it's methods a function looks like this",
+    "textbox_id": 3,
+    "coderunner_id": 1
+  },
+  {
+    "id": 4,
+    "textbox_title": "Funciónes con Parámetros",
+    "textBox_text": "Las funciones también pueden tener parámetros como este",
+    "english_text": "Functions can also have parameters like this",
+    "textbox_id": 4,
+    "coderunner_id": 2
+  },
+  {
+    "id": 5,
+    "textbox_title": "Función anónima",
+    "textBox_text": "Las funciones anónimas son funciones que no tienen un nombre",
+    "english_text": "Anonymous functions are functions that don't have a name",
+    "textbox_id": 5,
+    "coderunner_id": 3
+  },
+  {
+    "id": 6,
+    "textbox_title": "Funciones de flecha",
+    "textBox_text": "Las funciones de flecha son una forma de escribir funciones de una manera más corta. y a menudo los usamos para funciones de devolución de llamada, que veremos más adelante.",
+    "english_text": "Arrow functions are a way of writing functions in a shorter way. and we often use them for callback functions, which we'll look at later.",
+    "textbox_id": 6,
+    "coderunner_id": 4
+  },
+  {
+    "id": 7,
+    "textbox_title": "Las Funciones de flecha no es lamda in el java",
+    "textBox_text": "Las funciones de flecha pueden parecerse mucho a lamda en java, pero no son lo mismo.",
+    "english_text": "Arrow functions may look a lot like lamda  functions in java, but they're not the same.",
+    "textbox_id": null,
+    "coderunner_id": null
+  },
+  {
+    "id": 8,
+    "textbox_title": "Una función de devolución de llamada",
+    "textBox_text": "Una función de devolución de llamada o también llamada función de orden superior es una función que toma otra función como argumento",
+    "english_text": "A callback function is also called a higher-order function is a function that takes another function as an argument",
+    "textbox_id": 8,
+    "coderunner_id": 5
+  },
+  {
+    "id": 9,
+    "textbox_title": "Bucles in javascript",
+    "textBox_text": "Los bucles son algo que usamos muy a menudo en javascript, ahora repasaremos los tipos más comunes y cuándo se usan.",
+    "english_text": "Loops are something we use very often in javascript, now we'll go over the most common types and when they're used.",
+    "textbox_id": 9,
+    "coderunner_id": 6
+  },
+  {
+    "id": 10,
+    "textbox_title": ".map Explicación",
+    "textBox_text": "arriba tenemos el método.map, que no convierte la matriz en un mapa. en su lugar, recorre la matriz y aplica nuestra función de devolución de llamada en cada elemento y devuelve una nueva matriz",
+    "english_text": "Above we have the.map method, which does not convert the array into a map. Instead, it loops through the array and applies our callback function to each element and returns a new array",
+    "textbox_id": 10,
+    "coderunner_id": null
+  },
+  {
+    "id": 11,
+    "textbox_title": ".forEach Explicación",
+    "textBox_text": "con forEach simplemente recorremos cada elemento y hacemos algo para cada elemento, sin embargo, no devolvemos una nueva lista después. Úsalo cuando no te importen los valores después",
+    "english_text": "with forEach we simply go through each item and do something for each item, however, we don't return a new list afterwards. Use it when you don't care about values afterwards",
+    "textbox_id": 11,
+    "coderunner_id": 7
+  },
+  {
+    "id": 12,
+    "textbox_title": ".filter Explicación",
+    "textBox_text": ".filter llama al método de devolución de llamada en cada elemento de la lista y, si es verdadero, se incluye en la nueva lista que devuelve .filter.También hay un método .find que devuelve el primer elemento que coincide con la condición",
+    "english_text": ".filter calls the callback method on each item in the list, and if true, it is included in the new list that returns.filter. There is also a.find method that returns the first element that matches the condition",
+    "textbox_id": 12,
+    "coderunner_id": 8
+  },
+  {
+    "id": 13,
+    "textbox_title": "JavaScript en el backend",
+    "textBox_text": "Para ejecutar JavaScript de forma nativa en nuestra computadora, primero necesitamos Node, que es un entorno de tiempo de ejecución que nos permite ejecutar JavaScript fuera del navegador",
+    "english_text": "in order to run javascript on natively on our computer we first need node, which is a runtime environment that lets us to execute javascript outside of the browser  ",
+    "textbox_id": 13,
+    "coderunner_id": null
+  },
+  {
+    "id": 14,
+    "textbox_title": "nodo en el terminal",
+    "textBox_text": "Con Node instalado puedes ejecutar JavaScript en tu terminal sin nada más:",
+    "english_text": "with node installed you can run javascript in your terminal without anything else: ",
+    "textbox_id": null,
+    "coderunner_id": 9
+  },
+  {
+    "id": 15,
+    "textbox_title": "express",
+    "textBox_text": "Pero para ejecutar un servidor primero necesitamos un framework web, en este caso usaremos el módulo Node Express que es un framework web que podemos instalar a través del administrador de paquetes de Node, NPM.",
+    "english_text": "but in order to run a server we first need a web framework, in this instance we will use the node module express which is a web framework we can install via the node package manager, npm.  ",
+    "textbox_id": 15,
+    "coderunner_id": 10
+  },
+  {
+    "id": 16,
+    "textbox_title": "Uso exprés",
+    "textBox_text": "Para usar Express en nuestro proyecto de nodo, primero debemos importarlo a nuestro proyecto de node",
+    "english_text": "to actually use express in our node project we first need to import it into our node project ",
+    "textbox_id": 16,
+    "coderunner_id": 11
+  },
+  {
+    "id": 17,
+    "textbox_title": "Explinación exprés",
+    "textBox_text": "require(\"express\") importa el módulo Express. express() inicializa una aplicación Express. app es la aplicación Express que utilizamos para definir rutas e iniciar el servidor.",
+    "english_text": "require(\"express\") imports the Express module.express() initializes an Express app.app is the Express application that we use to define routes and start the server.",
+    "textbox_id": null,
+    "coderunner_id": null
+  },
+  {
+    "id": 18,
+    "textbox_title": "puerto de configuración",
+    "textBox_text": "Después de configurar Express en nuestra aplicación de nodo, podemos definir en qué puerto debe ejecutarse. Lo hacemos así:",
+    "english_text": "after setting up express on our node app we can then define what port it should run on. we do that like this",
+    "textbox_id": 18,
+    "coderunner_id": 12
+  },
+  {
+    "id": 19,
+    "textbox_title": "Explicación de puertos",
+    "textBox_text": "Aquí hay dos formas en que definimos nuestros puertos. ambos hacen lo mismo. Pero el segundo es un mejor estándar y muestra en qué puerto se ejecuta el servidor en la terminal. La escucha de la aplicación siempre debe estar en la parte inferior del archivo",
+    "english_text": "here is two ways we define our ports. they both do the same. but the 2nd one is a better standard and displays what port the server is running on in the terminal. the app listen should allways be at the buttom of the file ",
+    "textbox_id": null,
+    "coderunner_id": null
+  },
+  {
+    "id": 20,
+    "textbox_title": "Métodos HTTP en Express",
+    "textBox_text": "Ahora podemos comenzar a definir nuestros puntos finales y nuestros métodos HTTP. Es lo mismo para todos los métodos en Express, así que solo mostraré el método Get",
+    "english_text": "now we can begin to define our endpoints and our http methods. it is the same for all the methods in express so i will just show get method ",
+    "textbox_id": 20,
+    "coderunner_id": 13
+  },
+  {
+    "id": 21,
+    "textbox_title": ".get explinación",
+    "textBox_text": "Arriba hay un ejemplo de cómo usar la función express.get. La función toma 2 argumentos, el punto final y la función de devolución de llamada. La función de devolución de llamada toma dos parámetros: req (el objeto de solicitud) y res (el objeto de respuesta).",
+    "english_text": "above is a example of how to use the express .get function. the function takes 2 arguments, the endpoint and the callback function. The callback function takes  two parameters: req (the request object) and res (the response object).",
+    "textbox_id": null,
+    "coderunner_id": null
+  },
+  {
+    "id": 22,
+    "textbox_title": "variable path",
+    "textBox_text": "Cuando se trata de la ruta, también podemos tomar variables de ruta",
+    "english_text": "when it comes to the path we can also intake path variables ",
+    "textbox_id": 22,
+    "coderunner_id": 14
+  },
+  {
+    "id": 23,
+    "textbox_title": "Solicitar parámetros",
+    "textBox_text": "here we use request.parms to acress the perramitor  we input into the path and then use it to display it back on the client side via responds.",
+    "english_text": "Aquí usamos request.parms para acress el perramitor que ingresamos en la ruta y luego lo usamos para mostrarlo nuevamente en el lado del cliente a través de responds.",
+    "textbox_id": null,
+    "coderunner_id": null
+  },
+  {
+    "id": 24,
+    "textbox_title": "API tranquila",
+    "textBox_text": "En esta página repasaremos algunos de los puntos clave sobre cómo hacer una API REST.",
+    "english_text": "on this page we will go over some of the key points about making a rest api.",
+    "textbox_id": null,
+    "coderunner_id": null
+  },
+  {
+    "id": 25,
+    "textbox_title": "Rutas de descanso",
+    "textBox_text": "En el diseño de la API REST, nombramos nuestras rutas según la colección que deseamos manejar. en este ejemplo tenemos una API rest que maneja dioses griegos.",
+    "english_text": "in rest api design we name our routes after what collection we wish to handle. in this example we have a rest API that handles Greek gods.",
+    "textbox_id": 25,
+    "coderunner_id": 15
+  },
+  {
+    "id": 26,
+    "textbox_title": "consigue dioses",
+    "textBox_text": "Aquí definimos una ruta que obtiene todos los dioses griegos con el uso del verbo http get al frente. Nunca debes incluir el verbo como parte de la ruta. Por ejemplo, \"obtener/dioses griegos\"",
+    "english_text": "here we define a route that gets all the greek gods with use of the http verb get in the front. you should never include the verb as part of the route. for example \"get/greekgods\"",
+    "textbox_id": null,
+    "coderunner_id": null
+  },
+  {
+    "id": 27,
+    "textbox_title": "un dios",
+    "textBox_text": "Cuando deseamos obtener un solo dios de nuestra colección de dioses, no hacemos /god o /greekgod, aún debemos definir nuestra ruta como plural, en su lugar la definimos así:",
+    "english_text": "when we wish to get a single god from our collection of gods we dont do /god or /greekgod we should still define our route as plural, we instead define it like this:",
+    "textbox_id": 27,
+    "coderunner_id": 16
+  },
+  {
+    "id": 28,
+    "textbox_title": "obtener explicación de identificación",
+    "textBox_text": "Aquí encontramos un dios griego a través del parámetro ID que proviene de la variable path. Esto deja en claro que solo buscamos 1 dios griego con una cierta identificación",
+    "english_text": "here we find one greek god via the parameter id which comes in from the path variable.  this makes it clear we only seek 1 greek god with a certain id",
+    "textbox_id": null,
+    "coderunner_id": null
+  },
+  {
+    "id": 29,
+    "textbox_title": "Verbos HTTP",
+    "textBox_text": "Seguimos esto para todos los verbos HTTP que incluyen get, post, put, patch y delete",
+    "english_text": "we follow this for all the http verbs which include get, post, put, patch and delete",
+    "textbox_id": 29,
+    "coderunner_id": null
+  },
+  {
+    "id": 30,
+    "textbox_title": "disclaimer",
+    "textBox_text": "This is a disclaimer i am the author of this site and decided to make all the notes in spanish however it should be known that i do not speak nor understand spanish. This site was made in jest and is meant to be a fun experiment. please do not interpret any misuse of the spanish language as intentional or offensive. if you find any mistakes in the language then feel free to submit a pull request on my github repo. all the text can be found in the JsonDatabase folder on the github project.",
+    "english_text": "as above",
+    "textbox_id": 30,
+    "coderunner_id": null
+  },
+  {
+    "id": 31,
+    "textbox_title": "CommonJS con módulos ES",
+    "textBox_text": "Cuando se trata de JavaScript, hay dos formas de manejar las importaciones. el estándar para el lado del servidor fue durante mucho tiempo CommonJS con módulos ES que se usaban para el cliente. sin embargo, últimamente se ha convertido en estándar usar módulos ES en el lado del cliente y en el lado del servidor.",
+    "english_text": "When it comes to JavaScript, there are two ways to handle imports. the standard for the server side was for a long time CommonJS with ES modules being used for the client. however, lately it has become standard to use client-side and server-side ES modules.",
+    "textbox_id": 31,
+    "coderunner_id": null
+  },
+  {
+    "id": 32,
+    "textbox_title": "Cómo se ven",
+    "textBox_text": "Los módulos CommonJS y ES se ven un poco diferentes cuando se trata de cómo importar con ellos.",
+    "english_text": "CommonJS and ES Modules look a bit different when it comes to how to import with them.",
+    "textbox_id": null,
+    "coderunner_id": 17
+  },
+  {
+    "id": 33,
+    "textbox_title": "Pasos adicionales para los módulos JS",
+    "textBox_text": "Para que los módulos JS funcionen en el servidor, también debemos definirlo en nuestro archivo package.json que debe usar módulos",
+    "english_text": "for js modules to work on the server we also need to define it in our package.json file that it should use modules",
+    "textbox_id": 33,
+    "coderunner_id": 18
+  },
+  {
+    "id": 34,
+    "textbox_title": "cuándo usar qué",
+    "textBox_text": "Es una práctica común usar módulos JS en el lado del servidor en esta época, y en el futuro, sin embargo, los proyectos más antiguos aún pueden usar commonJS en sus proyectos.",
+    "english_text": "it is common practice to use js modules on the server side in this day and age, and going forwards, however older project may still use commonjs in their projects.",
+    "textbox_id": 34,
+    "coderunner_id": null
+  },
+  {
+    "id": 35,
+    "textbox_title": "Servir desde el cliente frente al servidor",
+    "textBox_text": "Hay muchas buenas razones por las que querríamos que se generara algo de HTML desde el backend en lugar del front-end. Una razón es la seguridad,",
+    "english_text": "there are many good reason why we would want some html generated from the backend instead of the front end. one reason is security,",
+    "textbox_id": 35,
+    "coderunner_id": null
+  },
+  {
+    "id": 36,
+    "textbox_title": "seguridad",
+    "textBox_text": "Si en el frontend necesitamos mostrar algo que proviene de una API, podría ser peligroso tener un acress a eso en el frontend, por lo tanto, es mejor hacer todo lo que necesitamos con él en el backend y luego enviar el producto terminado al frontend",
+    "english_text": "if we in the frontend need to display something that comes from a api it could be dangerus to have acress to that in the frontend, therefore it is better to do everything we need with it in the back end and then send the finished product to the frontend",
+    "textbox_id": 36,
+    "coderunner_id": null
+  },
+  {
+    "id": 37,
+    "textbox_title": "redireccionamiento",
+    "textBox_text": "Usamos la redirección cuando queremos redirigir a un usuario a otra cosa. Por ejemplo, si no han iniciado sesión y quieren hacer algo que necesita iniciar sesión, podemos redirigirlos para iniciar sesión y luego volver",
+    "english_text": "we use redirection when we wanna redirection a user to something else. like if they are not logged in and wanna do something that needs login, then we can redirect them login and then back again",
+    "textbox_id": 37,
+    "coderunner_id": null
+  }
+]

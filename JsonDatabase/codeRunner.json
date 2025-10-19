@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "coderunner_title": "Función básica",
+    "coderunner_input": "function calculadora(){\n  return 5 + 5\n}",
+    "coderunner_output": "10"
+  },
+  {
+    "id": 2,
+    "coderunner_title": "Parámetros ejemplo",
+    "coderunner_input": "function calculadora(num1,num2){\n  return num1 + num2\n}\n calculadora(10,10);",
+    "coderunner_output": "el retorno sería: 10"
+  },
+  {
+    "id": 3,
+    "coderunner_title": "Función anónima ejemplo",
+    "coderunner_input": "const obtenerFunciónAnónimaAleatoria = function (min, max) {\n return Math.floor(Math.random() * (max + 1 - min) + min)\n}\n getRandomAnonymousFunction(10,10);",
+    "coderunner_output": "el retorno podría ser ya que usamos random: 14"
+  },
+  {
+    "id": 4,
+    "coderunner_title": "Aquí está la misma función de antes pero como una función de flecha",
+    "coderunner_input": "const getRandomAnonymousFunction = (min, max) =>\n Math.floor(Math.random() * (max + 1 - min) + min);\n getRandomAnonymousFunction(1,10);",
+    "coderunner_output": "el retorno podría ser ya que usamos random: 8"
+  },
+  {
+    "id": 5,
+    "coderunner_title": "Aquí hay un ejemplo de cómo usar una función de devolución de llamada",
+    "coderunner_input": "function ejecutanteDeAcciónGenérico(name, action) {\n return action(name)\n}\nfunction acciónDeCocción(name) {\nreturn `${name} disfruta cocinar.`\n}\nconsole.log(ejecutanteDeAcciónGenérico(Martin,acciónDeCocción))",
+    "coderunner_output": "martin disfruta cocinar."
+  },
+  {
+    "id": 6,
+    "coderunner_title": ".map en bucle",
+    "coderunner_input": "const numbers = [1, 2, 3, 4, 5];\nconst doubledNumbers = numbers.map((number) => number * 2);\nconsole.log(doubledNumbers)",
+    "coderunner_output": "doubledNumbers = [2, 4, 6, 8, 10]"
+  },
+  {
+    "id": 7,
+    "coderunner_title": ".forEach en bucle",
+    "coderunner_input": "const numbers = [1, 2, 3, 4, 5];\nconst printStatements = numbers.forEach(number =>{\nconsole.log(number)\n})\n",
+    "coderunner_output": "1 2 3 4 5"
+  },
+  {
+    "id": 8,
+    "coderunner_title": ".filter en bucle",
+    "coderunner_input": "const numbers = [1, 2, 3, 4, 5];\nconst mayorQueTres = numbers.filter(number =>( number > 3);{\nconsole.log(mayorQueTres)\n})\n",
+    "coderunner_output": "[4, 5]"
+  },
+  {
+    "id": 9,
+    "coderunner_title": "javascript en el terminal",
+    "coderunner_input": "en la terminal \n console.log(\"holla\")",
+    "coderunner_output": "holla"
+  },
+  {
+    "id": 10,
+    "coderunner_title": "Instalación de Express",
+    "coderunner_input": "npm install express \n o npm i express",
+    "coderunner_output": "node modules carpeta y package.json"
+  },
+  {
+    "id": 11,
+    "coderunner_title": "Importar y usar Express",
+    "coderunner_input": "const express = require(\"express\")\n const app = express()",
+    "coderunner_output": "Ahora podemos usar Express como nuestro marco web"
+  },
+  {
+    "id": 12,
+    "coderunner_title": "puerto de configuración 8080",
+    "coderunner_input": "app.listen(8080) o \n const PORT = 8080 \n app.listen(PORT, () => {\n   console.log('app startet on port', PORT)\n  })\n ",
+    "coderunner_output": "app startet on port 8080"
+  },
+  {
+    "id": 13,
+    "coderunner_title": "Función Express para métodos HTTP",
+    "coderunner_input": "app.get(\"/planets\", (req, res) => {\n res.send({name: \"jupiter\"})\n})",
+    "coderunner_output": "{\"name\" : \"neptune\"}"
+  },
+  {
+    "id": 14,
+    "coderunner_title": "Variables de ruta en la URL",
+    "coderunner_input": "app.get(\"/waterfalls/:likingScore\", (req, res) => {\n res.send({response: `u like waterfalls this much: ${req.params.likingScore}`})\n })",
+    "coderunner_output": "response: `u like waterfalls this much: 10"
+  },
+  {
+    "id": 15,
+    "coderunner_title": "Consigue todos los dioses",
+    "coderunner_input": "app.get(\"/greekgods\", (req, res) => {\nres.send({ data: greekGods });\n});",
+    "coderunner_output": "{\n id:1,name:Zeus,\n},\n{\nid:2,\nname: Hercelus,\nisDemiGod: true\n}"
+  },
+  {
+    "id": 16,
+    "coderunner_title": "consigue un dios",
+    "coderunner_input": "app.get(\"/greekgods/:id\", (req, res) => {\n const providedGreekGodId = Number(req.params.id);\n const foundGreekGod = greekGods.find((greekGod) => greekGod.id === providedGreekGodId);\n if (!foundGreekGod) {\n res.status(404).send({ errorMessage: `Greek God not found by id ${providedGreekGodId}` });\n } else {\n res.send({ data: foundGreekGod });\n }\n });",
+    "coderunner_output": " {id: 1,name:Zeus,}"
+  },
+  {
+    "id": 17,
+    "coderunner_title": "Los módulos",
+    "coderunner_input": "importar express con CommonJS:\n  const express = require(\"express)\"\n const app = express()\n Importar Express con módulos ES \n import express from 'express'\n const app = express()",
+    "coderunner_output": "Ahora podemos usarlos en nuestro backend"
+  },
+  {
+    "id": 18,
+    "coderunner_title": "package.json",
+    "coderunner_input": "\"type\": \"module\"",
+    "coderunner_output": "Ahora podemos usar módulos JS"
+  }
+]

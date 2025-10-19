@@ -156,13 +156,18 @@ function createSidebar (htmlElement) {
   const elementIDs = htmlElement.querySelectorAll('[id]')
 
   elementIDs.forEach(element => {
+    const textboxTitle = element.querySelector('h3');
+
     const anchorTag = document.createElement('a')
-    anchorTag.textContent = element.dataset.idIdentifier
+    anchorTag.textContent = textboxTitle.textContent
     anchorTag.href = `#${element.id}`
+    anchorTag.classList.add('sidebarLink');
 
     const anchorHolder = document.createElement('div')
     anchorHolder.appendChild(anchorTag)
+    anchorHolder.classList.add('sidebarItem');
     sidebarContainer.appendChild(anchorHolder)
+
   })
 
   return sidebarContainer
@@ -177,11 +182,7 @@ async function getAddsForRightSideBar () {
   const totalAds = Math.floor(sideBarHight / adHight)
   console.log(totalAds)
 
-  const response = await fetch('/api/getAds', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ totalAds })
-  })
+  const response = await fetch(`/api/ads?totalAds=${totalAds}`) //why did we post ? why ? 
 
   const data = await response.json()
   return data.memes || [data]

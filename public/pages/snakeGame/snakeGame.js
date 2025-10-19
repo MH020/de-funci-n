@@ -1,3 +1,5 @@
+import dom from '../../js/domElements.js'
+
 const blockSize = 25; 
 const total_row = 17; 
 const total_col = 17; 
@@ -64,7 +66,7 @@ function restartGame(){
 }
 
 async function postScore(name, score) {
-    const response = await fetch('/postScore', {
+    const response = await fetch('/scores', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name: name, score: score })
@@ -222,7 +224,8 @@ function createSnakeGame(){
 
     gameContainer = document.createElement("div");
     gameContainer.classList.add("gameContainer"); 
-    document.body.appendChild(gameContainer);
+    const page = document.querySelector('.page')
+    page.appendChild(gameContainer);
 
     board = document.createElement("canvas")
     board.classList.add("board");
@@ -245,3 +248,25 @@ function createSnakeGame(){
 }
 
 createSnakeGame();
+
+dom.setupLogo('../../css/javascript-736401_1280.png')
+
+const page = document.querySelector('.page')
+const sidebar = document.querySelector('.SideBar')
+
+const memes = await dom.getAddsForRightSideBar()
+
+dom.populateRightSideBar(memes)
+
+sidebar.appendChild(dom.createSidebar(page))
+
+document.querySelectorAll('.button').forEach(button => {
+  const outputSelector = `.outputContainer[data-output="${button.dataset.output}"]`;
+  const output = document.querySelector(outputSelector);
+
+  button.addEventListener('click', () => {
+    const isVisible = output.style.display === 'block';
+    output.style.display = isVisible ? 'none' : 'block';
+    button.textContent = isVisible ? 'show solution' : 'hide solution';
+  });
+});
