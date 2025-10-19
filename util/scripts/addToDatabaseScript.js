@@ -25,6 +25,8 @@ function lineReaderQuestion(questionText, value){
     })
 }; 
 
+await databaseScript();
+
 async function databaseScript(){
     const answer = await lineReaderQuestion("Press 1 to make a textbox with an associated coderunner.\nPress 2 to just make a textbox.\nPress 3 to close.\n");
     if (answer === '1') {
@@ -98,9 +100,8 @@ async function databaseScript(){
         const textbox = {id,textbox_title,textBox_text,english_text,textbox_id, coderunner_id}
 
         textboxJson.push(textbox)
-        coderunnerJson.push(coderunner)
 
-        fs.writeFileSync(textboxJsonPath, JSON.stringify(textboxJson),null,2);
+        fs.writeFileSync(textboxJsonPath, JSON.stringify(textboxJson,null,2));
         fs.writeFileSync(coderunnerJsonPath, JSON.stringify(coderunnerJson,null,2));
         lineReader.close();
 
@@ -120,5 +121,4 @@ async function databaseScript(){
 
 }
 
-databaseScript();
 

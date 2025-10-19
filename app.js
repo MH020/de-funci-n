@@ -12,7 +12,7 @@ app.use(express.json())
   const navbar = readPage("./util/componets/navbar.html")
 
 
-app.post('/score', async (req, res) => {
+app.post('/scores', async (req, res) => {
   const { name, score } = req.body
 
   const filePath = path.resolve("JsonDatabase/scores.json")
@@ -74,6 +74,17 @@ app.get('/firstServer', (req, res) => {
   .replace("$$navbar$$", navbar)
   .replace("$$PAGE_CONTENT$$", pageContent)
   .replace("$$PAGE_TITLE$$", "Primer servidor y javascript en la parte posterior en forma de nodo")
+  .replace("$$SCRIPT_PATH$$", "/pages/index/index.js");
+  res.send(firstServerPage)
+})
+
+app.get('/restAPI', (req, res) => {
+  const pageContent = ""
+
+  const firstServerPage = template
+  .replace("$$navbar$$", navbar)
+  .replace("$$PAGE_CONTENT$$", pageContent)
+  .replace("$$PAGE_TITLE$$", "Conceptos básicos sobre la API de REST")
   .replace("$$SCRIPT_PATH$$", "/pages/index/index.js");
   res.send(firstServerPage)
 })

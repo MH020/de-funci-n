@@ -64,7 +64,7 @@ function restartGame(){
 }
 
 async function postScore(name, score) {
-    const response = await fetch('/postScore', {
+    const response = await fetch('/scores', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name: name, score: score })
