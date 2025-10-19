@@ -42,7 +42,7 @@ app.post('/scores', async (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  const pageContent = buildTextBox(1) + buildTextBoxWithTag(1);
+  const pageContent = buildTextBox(1) + buildTextBoxWithTag(1) + buildTextBox(30);
   const homePage = template
   .replace("$$navbar$$", navbar)
   .replace("$$PAGE_CONTENT$$", pageContent)

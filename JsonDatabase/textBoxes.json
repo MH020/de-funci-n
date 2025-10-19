@@ -230,5 +230,13 @@
     "english_text": "we follow this for all the http verbs which include get, post, put, patch and delete",
     "textbox_id": 29,
     "coderunner_id": null
+  },
+  {
+    "id": 30,
+    "textbox_title": "disclaimer",
+    "textBox_text": "This is a disclaimer i am the author of this site and decided to make all the notes in spanish however it should be known that i do not speak nor understand spanish. This site was made in jest and is meant to be a fun experiment. please do not interpret any misuse of the spanish language as intentional or offensive. if you find any mistakes in the language then feel free to submit a pull request on my github repo. all the text can be found in the JsonDatabase folder on the github project.",
+    "english_text": "as above",
+    "textbox_id": 30,
+    "coderunner_id": null
   }
 ]
