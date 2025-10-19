@@ -1,3 +1,5 @@
+import dom from '../../js/domElements.js'
+
 const blockSize = 25; 
 const total_row = 17; 
 const total_col = 17; 
@@ -246,3 +248,25 @@ function createSnakeGame(){
 }
 
 createSnakeGame();
+
+dom.setupLogo('../../css/javascript-736401_1280.png')
+
+const page = document.querySelector('.page')
+const sidebar = document.querySelector('.SideBar')
+
+const memes = await dom.getAddsForRightSideBar()
+
+dom.populateRightSideBar(memes)
+
+sidebar.appendChild(dom.createSidebar(page))
+
+document.querySelectorAll('.button').forEach(button => {
+  const outputSelector = `.outputContainer[data-output="${button.dataset.output}"]`;
+  const output = document.querySelector(outputSelector);
+
+  button.addEventListener('click', () => {
+    const isVisible = output.style.display === 'block';
+    output.style.display = isVisible ? 'none' : 'block';
+    button.textContent = isVisible ? 'show solution' : 'hide solution';
+  });
+});

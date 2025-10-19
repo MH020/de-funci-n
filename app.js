@@ -91,7 +91,6 @@ app.get('/restAPI', (req, res) => {
 
 app.get('/snakeGame', (req, res) => {
   const pageContent = ""
-  const scripts = 
   const snakeGamePage = template
   .replace("$$navbar$$", navbar)
   .replace("$$PAGE_CONTENT$$", pageContent)
