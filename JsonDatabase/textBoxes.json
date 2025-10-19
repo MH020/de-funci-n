@@ -238,5 +238,37 @@
     "english_text": "as above",
     "textbox_id": 30,
     "coderunner_id": null
+  },
+  {
+    "id": 31,
+    "textbox_title": "CommonJS con módulos ES",
+    "textBox_text": "Cuando se trata de JavaScript, hay dos formas de manejar las importaciones. el estándar para el lado del servidor fue durante mucho tiempo CommonJS con módulos ES que se usaban para el cliente. sin embargo, últimamente se ha convertido en estándar usar módulos ES en el lado del cliente y en el lado del servidor.",
+    "english_text": "When it comes to JavaScript, there are two ways to handle imports. the standard for the server side was for a long time CommonJS with ES modules being used for the client. however, lately it has become standard to use client-side and server-side ES modules.",
+    "textbox_id": 31,
+    "coderunner_id": null
+  },
+  {
+    "id": 32,
+    "textbox_title": "Cómo se ven",
+    "textBox_text": "Los módulos CommonJS y ES se ven un poco diferentes cuando se trata de cómo importar con ellos.",
+    "english_text": "CommonJS and ES Modules look a bit different when it comes to how to import with them.",
+    "textbox_id": null,
+    "coderunner_id": 17
+  },
+  {
+    "id": 33,
+    "textbox_title": "Pasos adicionales para los módulos JS",
+    "textBox_text": "Para que los módulos JS funcionen en el servidor, también debemos definirlo en nuestro archivo package.json que debe usar módulos",
+    "english_text": "for js modules to work on the server we also need to define it in our package.json file that it should use modules",
+    "textbox_id": 33,
+    "coderunner_id": 18
+  },
+  {
+    "id": 34,
+    "textbox_title": "cuándo usar qué",
+    "textBox_text": "Es una práctica común usar módulos JS en el lado del servidor en esta época, y en el futuro, sin embargo, los proyectos más antiguos aún pueden usar commonJS en sus proyectos.",
+    "english_text": "it is common practice to use js modules on the server side in this day and age, and going forwards, however older project may still use commonjs in their projects.",
+    "textbox_id": 34,
+    "coderunner_id": null
   }
 ]

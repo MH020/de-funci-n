@@ -89,6 +89,19 @@ app.get('/restAPI', (req, res) => {
   res.send(firstServerPage)
 })
 
+
+app.get('/clientVsServerside', (req, res) => {
+  const pageContent = ""
+
+  const firstServerPage = template
+  .replace("$$navbar$$", navbar)
+  .replace("$$PAGE_CONTENT$$", pageContent)
+  .replace("$$PAGE_TITLE$$", "lado del cliente vs lado del servidor")
+  .replace("$$SCRIPT_PATH$$", "/pages/index/index.js");
+  res.send(firstServerPage)
+})
+
+
 app.get('/snakeGame', (req, res) => {
   const pageContent = ""
   const snakeGamePage = template
