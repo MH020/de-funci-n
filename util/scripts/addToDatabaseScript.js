@@ -25,6 +25,10 @@ function lineReaderQuestion(questionText, value){
     })
 }; 
 
+function makeNewLine(string){
+    return string.replaceAll("\\n",'\n');
+}
+
 await databaseScript();
 
 async function databaseScript(){
@@ -59,9 +63,11 @@ async function databaseScript(){
 
         const coderunner_title = await lineReaderQuestion("Enter coderunner_title:")
 
-        const coderunner_input = await lineReaderQuestion("Enter coderunner_input:")
+        const coderunner_input = makeNewLine(await lineReaderQuestion("Enter coderunner_input:"))
         
-        const coderunner_output = await lineReaderQuestion("Enter coderunner_output:")
+        const coderunner_output = makeNewLine(await lineReaderQuestion("Enter coderunner_output:"))
+
+        
 
 
         const coderunner = {id:coderunner_id,coderunner_title,coderunner_input,coderunner_output}

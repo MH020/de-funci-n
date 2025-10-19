@@ -206,5 +206,29 @@
     "english_text": "here we define a route that gets all the greek gods with use of the http verb get in the front. you should never include the verb as part of the route. for example \"get/greekgods\"",
     "textbox_id": null,
     "coderunner_id": null
+  },
+  {
+    "id": 27,
+    "textbox_title": "un dios",
+    "textBox_text": "Cuando deseamos obtener un solo dios de nuestra colección de dioses, no hacemos /god o /greekgod, aún debemos definir nuestra ruta como plural, en su lugar la definimos así:",
+    "english_text": "when we wish to get a single god from our collection of gods we dont do /god or /greekgod we should still define our route as plural, we instead define it like this:",
+    "textbox_id": 27,
+    "coderunner_id": 16
+  },
+  {
+    "id": 28,
+    "textbox_title": "obtener explicación de identificación",
+    "textBox_text": "Aquí encontramos un dios griego a través del parámetro ID que proviene de la variable path. Esto deja en claro que solo buscamos 1 dios griego con una cierta identificación",
+    "english_text": "here we find one greek god via the parameter id which comes in from the path variable.  this makes it clear we only seek 1 greek god with a certain id",
+    "textbox_id": null,
+    "coderunner_id": null
+  },
+  {
+    "id": 29,
+    "textbox_title": "Verbos HTTP",
+    "textBox_text": "Seguimos esto para todos los verbos HTTP que incluyen get, post, put, patch y delete",
+    "english_text": "we follow this for all the http verbs which include get, post, put, patch and delete",
+    "textbox_id": 29,
+    "coderunner_id": null
   }
 ]

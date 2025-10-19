@@ -88,5 +88,11 @@
     "coderunner_title": "Consigue todos los dioses",
     "coderunner_input": "app.get(\"/greekgods\", (req, res) => {\nres.send({ data: greekGods });\n});",
     "coderunner_output": "{\n id:1,name:Zeus,\n},\n{\nid:2,\nname: Hercelus,\nisDemiGod: true\n}"
+  },
+  {
+    "id": 16,
+    "coderunner_title": "consigue un dios",
+    "coderunner_input": "app.get(\"/greekgods/:id\", (req, res) => {\n const providedGreekGodId = Number(req.params.id);\n const foundGreekGod = greekGods.find((greekGod) => greekGod.id === providedGreekGodId);\n if (!foundGreekGod) {\n res.status(404).send({ errorMessage: `Greek God not found by id ${providedGreekGodId}` });\n } else {\n res.send({ data: foundGreekGod });\n }\n });",
+    "coderunner_output": " {id: 1,name:Zeus,}"
   }
 ]
