@@ -90,7 +90,14 @@ app.get('/restAPI', (req, res) => {
 })
 
 app.get('/snakeGame', (req, res) => {
-  res.sendFile(path.resolve('public/pages/snakeGame/snakeGame.html'))
+  const pageContent = ""
+  const scripts = 
+  const snakeGamePage = template
+  .replace("$$navbar$$", navbar)
+  .replace("$$PAGE_CONTENT$$", pageContent)
+  .replace("$$PAGE_TITLE$$", "snake game!")
+  .replace("$$SCRIPT_PATH$$", "/pages/snakeGame/snakeGame.js");
+  res.send(snakeGamePage)
 })
 
 app.get('/scores', (req,res) => {

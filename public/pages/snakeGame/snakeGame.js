@@ -222,7 +222,8 @@ function createSnakeGame(){
 
     gameContainer = document.createElement("div");
     gameContainer.classList.add("gameContainer"); 
-    document.body.appendChild(gameContainer);
+    const page = document.querySelector('.page')
+    page.appendChild(gameContainer);
 
     board = document.createElement("canvas")
     board.classList.add("board");
