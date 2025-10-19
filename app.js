@@ -124,7 +124,7 @@ app.get('/scores', (req,res) => {
     
 } catch (error){
   console.error("Error loading scores:", error.message);
-  res.status(500).send({ error: 500, message: "Could not read or parse scores file." });
+  res.status(500).send({ error: 500, message: "Could not read or parse scores file" });
 }
 })
 

@@ -270,5 +270,29 @@
     "english_text": "it is common practice to use js modules on the server side in this day and age, and going forwards, however older project may still use commonjs in their projects.",
     "textbox_id": 34,
     "coderunner_id": null
+  },
+  {
+    "id": 35,
+    "textbox_title": "Servir desde el cliente frente al servidor",
+    "textBox_text": "Hay muchas buenas razones por las que querríamos que se generara algo de HTML desde el backend en lugar del front-end. Una razón es la seguridad,",
+    "english_text": "there are many good reason why we would want some html generated from the backend instead of the front end. one reason is security,",
+    "textbox_id": 35,
+    "coderunner_id": null
+  },
+  {
+    "id": 36,
+    "textbox_title": "seguridad",
+    "textBox_text": "Si en el frontend necesitamos mostrar algo que proviene de una API, podría ser peligroso tener un acress a eso en el frontend, por lo tanto, es mejor hacer todo lo que necesitamos con él en el backend y luego enviar el producto terminado al frontend",
+    "english_text": "if we in the frontend need to display something that comes from a api it could be dangerus to have acress to that in the frontend, therefore it is better to do everything we need with it in the back end and then send the finished product to the frontend",
+    "textbox_id": 36,
+    "coderunner_id": null
+  },
+  {
+    "id": 37,
+    "textbox_title": "redireccionamiento",
+    "textBox_text": "Usamos la redirección cuando queremos redirigir a un usuario a otra cosa. Por ejemplo, si no han iniciado sesión y quieren hacer algo que necesita iniciar sesión, podemos redirigirlos para iniciar sesión y luego volver",
+    "english_text": "we use redirection when we wanna redirection a user to something else. like if they are not logged in and wanna do something that needs login, then we can redirect them login and then back again",
+    "textbox_id": 37,
+    "coderunner_id": null
   }
 ]
