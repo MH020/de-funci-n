@@ -79,7 +79,7 @@ app.get('/firstServer', (req, res) => {
 })
 
 app.get('/restAPI', (req, res) => {
-  const pageContent = ""
+  const pageContent = buildTextBox(24) + buildTextBoxWithCoderunner(25) + buildTextBox(26) + buildTextBoxWithCoderunner(27) + buildTextBox(28) + buildTextBox(29)
 
   const firstServerPage = template
   .replace("$$navbar$$", navbar)
